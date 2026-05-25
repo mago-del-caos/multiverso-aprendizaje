@@ -421,6 +421,12 @@ const playSound = {
   }
 };
 
+function triggerSound(soundName) {
+  if (state && state.effectsEnabled && playSound[soundName]) {
+    playSound[soundName]();
+  }
+}
+
 // ==========================================
 // 2.1 JUBITS VECTOR DRAWING ENGINE (Dynamic SVGs)
 // ==========================================
@@ -1639,13 +1645,30 @@ function setupEventListeners() {
 
   const musicCheck = document.getElementById('music-checkbox');
   musicCheck.addEventListener('change', (e) => {
-    triggerSound('click');
     state.musicEnabled = e.target.checked;
-    if (state.musicEnabled) {
-      playSound.startAmbient();
-    } else {
-      playSound.stopAmbient();
-    }
+    saveState();
+    updateMusicUI();
+    triggerSound('click');
+  });
+
+  const mobileMusicBtn = document.getElementById('mobile-music-btn');
+  if (mobileMusicBtn) {
+    mobileMusicBtn.addEventListener('click', () => {
+      state.musicEnabled = !state.musicEnabled;
+      saveState();
+      if (musicCheck) musicCheck.checked = state.musicEnabled;
+      updateMusicUI();
+      triggerSound('click');
+    });
+  }
+
+  document.querySelectorAll('.theme-bubble-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetTheme = btn.getAttribute('data-theme');
+      applyTheme(targetTheme);
+      updateGlobalStats();
+      triggerSound('click');
+    });
   });
 
   document.getElementById('store-buy-hearts').addEventListener('click', handleBuyHearts);
@@ -1819,10 +1842,31 @@ function setupWelcomeScreen() {
 // 11. BOOTSTRAP INITIALIZATION
 // ==========================================
 
+function updateMusicUI() {
+  const mobileMusicBtn = document.getElementById('mobile-music-btn');
+  const iconSpan = document.getElementById('music-btn-icon');
+  
+  if (state.musicEnabled) {
+    playSound.startAmbient();
+    if (mobileMusicBtn) mobileMusicBtn.classList.add('active');
+    if (iconSpan) iconSpan.innerText = '🔊';
+  } else {
+    playSound.stopAmbient();
+    if (mobileMusicBtn) mobileMusicBtn.classList.remove('active');
+    if (iconSpan) iconSpan.innerText = '🎵';
+  }
+}
+
 function initApp() {
   applyTheme(state.currentTheme);
   setupEventListeners();
   setupWelcomeScreen();
+  
+  // Set initial checkbox and mobile button states
+  const musicCheck = document.getElementById('music-checkbox');
+  if (musicCheck) musicCheck.checked = state.musicEnabled;
+  updateMusicUI();
+
   updateGlobalStats();
   renderActiveView();
 }
