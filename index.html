@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mate-Go 🔵🏫: Matemáticas IV - CIIJ</title>
-  <meta name="description" content="Aprende y practica Matemáticas IV de forma divertida con los Jubits del CIIJ. Resuelve ejercicios de tu guía con gamificación interactiva al estilo Kawaii." />
+  <title>Mate-Go 🔵🏫: Matemáticas IV - Instituto Juventud</title>
+  <meta name="description" content="Aprende y practica Matemáticas IV de forma divertida con los Jubits de Mate-Go. Resuelve ejercicios de tu guía con gamificación interactiva al estilo Kawaii." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔵</text></svg>" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,7 +16,8 @@
   <div id="welcome-screen" class="welcome-overlay">
     <div class="welcome-card">
       <div class="welcome-logo-container">
-        <div class="ciij-badge">CIIJ 🏫</div>
+        <p class="welcome-institution" style="font-family: 'Fredoka', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent-purple-hover); margin-bottom: 0.75rem; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">El Instituto Juventud del Estado de México Presenta</p>
+        <button id="btn-credits-trigger" class="btn-secondary credits-badge-btn" style="margin-bottom: 1.5rem; font-size: 0.9rem; padding: 0.5rem 1.25rem;">📖 Créditos</button>
         <div class="floating-jubits-row">
           <div class="welcome-jubit animation-float-1">🔵</div>
           <div class="welcome-jubit animation-float-2">🟢</div>
@@ -25,7 +26,7 @@
           <div class="welcome-jubit animation-float-5">🟣</div>
         </div>
         <h1 class="welcome-title">Mate-Go</h1>
-        <p class="welcome-subtitle">Matemáticas IV de la mano con los Jubits del CIIJ</p>
+        <p class="welcome-subtitle">Matemáticas IV de la mano con tus entrañables Jubits</p>
       </div>
 
       <!-- New Player Section -->
@@ -105,6 +106,11 @@
     <main class="main-content">
       <!-- TOP STATUS NAVBAR -->
       <header class="top-navbar">
+        <!-- Mobile Navigation Menu Toggle Button -->
+        <button id="menu-toggle-btn" class="menu-toggle-btn" title="Menú de Navegación">
+          ☰
+        </button>
+
         <!-- Quick Theme Color Picker -->
         <div class="theme-quick-picker" title="Cambiar color de fondo">
           <button class="theme-bubble-btn bubble-pink" data-theme="mochi-pink" title="Mochi Rosa">🔵</button>
@@ -139,6 +145,30 @@
           <span id="stat-xp">0 XP</span>
         </div>
       </header>
+
+      <!-- Mobile Navigation Dropdown Menu -->
+      <div id="mobile-nav-dropdown" class="mobile-nav-dropdown hidden">
+        <button class="dropdown-item active" data-tab="dashboard">
+          <span class="dropdown-item-icon">🌸</span>
+          <span>Temporadas</span>
+        </button>
+        <button class="dropdown-item" data-tab="sandbox">
+          <span class="dropdown-item-icon">🍡</span>
+          <span>Laboratorio</span>
+        </button>
+        <button class="dropdown-item" data-tab="codex">
+          <span class="dropdown-item-icon">📖</span>
+          <span>Geómetras</span>
+        </button>
+        <button class="dropdown-item" data-tab="store">
+          <span class="dropdown-item-icon">🛍️</span>
+          <span>Tiendita Jubit</span>
+        </button>
+        <button id="dropdown-logout-btn" class="dropdown-item logout-item">
+          <span class="dropdown-item-icon">🔄</span>
+          <span>Cambiar Jugador</span>
+        </button>
+      </div>
 
       <!-- 1.1 VIEW: DASHBOARD (MAPA DE SENDEROS) -->
       <section id="view-dashboard" class="tab-view active">
@@ -437,6 +467,29 @@
         <button id="btn-next-question" class="btn-primary btn-correct hidden">Continuar ➡️</button>
       </div>
     </footer>
+  </div>
+
+  <!-- ================= CREDITS MODAL ================= -->
+  <div id="credits-modal" class="welcome-overlay hidden">
+    <div class="welcome-card credits-card" style="position: relative;">
+      <button id="btn-close-credits" class="close-btn" style="position: absolute; right: 1.5rem; top: 1.5rem; font-size: 1.5rem; border: none; background: transparent; cursor: pointer;">❌</button>
+      <div class="welcome-logo-container" style="margin-top: 1rem;">
+        <div id="credits-jubit-avatar" class="credits-avatar" style="width: 120px; height: 120px; display: flex; align-items: center; justify-content: center;">
+          <!-- Dynamic Blue Jubit SVG will be injected here -->
+        </div>
+        <h2 class="welcome-title" style="font-size: 2rem; margin-top: 1rem;">Créditos</h2>
+      </div>
+      <div class="credits-content" style="text-align: center; font-family: 'Fredoka', sans-serif;">
+        <p style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.6;">
+          Esta aplicación es un proyecto del <br/><strong>Centro de Innovación e Investigación Juventud</strong>.
+        </p>
+        <p style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.6;">
+          Realizado por <br/><strong>Pablo Adrian Rivera Juvenal</strong><br/>
+          <span style="color: var(--accent-purple-hover); font-weight: bold; font-size: 1.3rem;">"Profe Adrian"</span>
+        </p>
+        <button id="btn-credits-ok" class="btn-primary" style="margin-top: 1rem; width: 100%;">¡Entendido! 🔵</button>
+      </div>
+    </div>
   </div>
 
 </body>

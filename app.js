@@ -52,6 +52,27 @@ const mathLessonsData = [
             options: ["Verdadero", "Falso"],
             answer: "Verdadero",
             explanation: "La suma sube a $420 y el total de datos a 8. Calculamos 420 / 8 = $52.5. ¡La media subió por el valor extremo! 🎀"
+          },
+          {
+            id: "qm1_1_5",
+            type: "multiple-choice",
+            question: "Las temperaturas registradas durante una semana en Toluca fueron: 12°C, 15°C, 12°C, 18°C, 20°C, 15°C, y 12°C. ¿Cuáles son la moda y la mediana?",
+            options: [
+              "Moda: 12°C, Mediana: 15°C",
+              "Moda: 15°C, Mediana: 12°C",
+              "Moda: 12°C, Mediana: 12°C",
+              "Moda: 18°C, Mediana: 15°C"
+            ],
+            answer: "Moda: 12°C, Mediana: 15°C",
+            explanation: "El número 12 se repite 3 veces (moda). Ordenando los datos: 12, 12, 12, 15, 15, 18, 20, el dato central (mediana) es 15, ¡nya! ❄️"
+          },
+          {
+            id: "qm1_1_6",
+            type: "true-false",
+            question: "La media aritmética de las calificaciones escolares 10, 20, 30 y 40 es exactamente igual a 25.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "Sumamos las cuatro calificaciones: 10 + 20 + 30 + 40 = 100. Al dividir entre 4 obtenemos 25, ¡súper correcto! 🌟"
           }
         ]
       },
@@ -83,6 +104,30 @@ const mathLessonsData = [
             options: ["z^6", "z^5", "5z", "z^1"],
             answer: "z^5",
             explanation: "Al multiplicar bases iguales, se conserva la base y se suman los exponentes: z^(3+2) = z^5. 🧸"
+          },
+          {
+            id: "qm1_2_4",
+            type: "multiple-choice",
+            question: "Aplica las leyes de los exponentes para elevar el siguiente monomio al cubo: (3x^3 y^2)^3",
+            options: ["9x^9 y^6", "27x^9 y^6", "27x^6 y^5", "9x^6 y^5"],
+            answer: "27x^9 y^6",
+            explanation: "Elevamos al cubo cada componente: 3^3 = 27, (x^3)^3 = x^(3*3) = x^9, y (y^2)^3 = y^(2*3) = y^6. Obtenemos 27x^9 y^6. 🍡"
+          },
+          {
+            id: "qm1_2_5",
+            type: "fill-in-the-blank",
+            question: "Aplica la ley de la división de bases iguales para simplificar: (a^8 b^5) / (a^3 b^2)",
+            options: ["a^5 b^3", "a^11 b^7", "a^5 b^2", "a^8 b^3"],
+            answer: "a^5 b^3",
+            explanation: "En la división de bases iguales, restamos los exponentes: a^(8-3) = a^5 y b^(5-2) = b^3. ¡Súper fácil! 🐱"
+          },
+          {
+            id: "qm1_2_6",
+            type: "true-false",
+            question: "Cualquier número o base (diferente de cero) elevado a la potencia cero (x^0) es siempre igual a 1.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "Por definición y ley matemática fundamental de los exponentes, cualquier número real no nulo elevado a la potencia cero da como resultado 1. 🍭"
           }
         ]
       },
@@ -106,6 +151,30 @@ const mathLessonsData = [
             options: ["Verdadero", "Falso"],
             answer: "Verdadero",
             explanation: "Convertimos 1.5 x 10^3 a 0.15 x 10^4 para poder sumar: (3.2 + 0.15) x 10^4 = 3.35 x 10^4. 🍡"
+          },
+          {
+            id: "qm1_3_3",
+            type: "multiple-choice",
+            question: "Expresa el número decimal 0.000045 en notación científica de forma correcta.",
+            options: ["4.5 x 10^-5", "4.5 x 10^-4", "45 x 10^-6", "4.5 x 10^5"],
+            answer: "4.5 x 10^-5",
+            explanation: "Desplazamos el punto decimal 5 posiciones a la derecha para obtener 4.5. Al ser un número menor que 1, el exponente es negativo: 4.5 x 10^-5. 🧸"
+          },
+          {
+            id: "qm1_3_4",
+            type: "fill-in-the-blank",
+            question: "Representa el número 3,800,000 en notación científica adorable.",
+            options: ["3.8 x 10^6", "3.8 x 10^5", "38 x 10^5", "0.38 x 10^7"],
+            answer: "3.8 x 10^6",
+            explanation: "Movemos el punto decimal 6 posiciones a la izquierda para dejar un número entre 1 y 10: 3.8 x 10^6, ¡nya! 🌸"
+          },
+          {
+            id: "qm1_3_5",
+            type: "multiple-choice",
+            question: "Resuelve la siguiente división expresando en notación científica: (6 x 10^12) / (2 x 10^4)",
+            options: ["3 x 10^8", "3 x 10^16", "3 x 10^3", "12 x 10^8"],
+            answer: "3 x 10^8",
+            explanation: "Dividimos los coeficientes (6 / 2 = 3) y restamos los exponentes de las potencias de diez (12 - 4 = 8), dando 3 x 10^8. 💡"
           }
         ]
       }
@@ -139,6 +208,30 @@ const mathLessonsData = [
             options: ["4x^2 + 9y^2", "4x^2 + 12xy + 9y^2", "4x^2 + 6xy + 9y^2", "2x^2 + 12xy + 3y^2"],
             answer: "4x^2 + 12xy + 9y^2",
             explanation: "Fórmula (a+b)² = a² + 2ab + b². Obtenemos (2x)² + 2(2x)(3y) + (3y)² = 4x² + 12xy + 9y². 🎀"
+          },
+          {
+            id: "qm2_1_3",
+            type: "multiple-choice",
+            question: "Resuelve el siguiente producto de binomios conjugados: (3x - 5y)(3x + 5y)",
+            options: ["9x^2 - 25y^2", "9x^2 + 25y^2", "9x^2 - 30xy + 25y^2", "3x^2 - 5y^2"],
+            answer: "9x^2 - 25y^2",
+            explanation: "El producto de binomios conjugados es igual a una diferencia de cuadrados: (3x)^2 - (5y)^2 = 9x^2 - 25y^2, ¡nya! ✨"
+          },
+          {
+            id: "qm2_1_4",
+            type: "fill-in-the-blank",
+            question: "Desarrolla el binomio con término común aplicando la regla: (x + 3)(x + 4)",
+            options: ["x^2 + 7x + 12", "x^2 + 12x + 7", "x^2 + 7x + 7", "x^2 + x + 12"],
+            answer: "x^2 + 7x + 12",
+            explanation: "La regla indica: cuadrado del término común (x^2) más la suma de los diferentes por el común ((3+4)*x = 7x) más el producto de los diferentes (3*4 = 12). 🍡"
+          },
+          {
+            id: "qm2_1_5",
+            type: "true-false",
+            question: "El desarrollo del binomio al cuadrado (a - b)^2 da como resultado exacto la expresión simple a^2 - b^2.",
+            options: ["Verdadero", "Falso"],
+            answer: "Falso",
+            explanation: "¡Falso, nya! (a - b)^2 = a^2 - 2ab + b^2, lo cual es un Trinomio Cuadrado Perfecto. a^2 - b^2 es el resultado de binomios conjugados. 🎀"
           }
         ]
       },
@@ -178,6 +271,30 @@ const mathLessonsData = [
               { left: "a^2 - 11a + 28", right: "(a - 7)(a - 4)" },
               { left: "x^2 - 5x - 36", right: "(x - 9)(x + 4)" }
             ]
+          },
+          {
+            id: "qm2_2_4",
+            type: "multiple-choice",
+            question: "Factoriza el siguiente trinomio cuadrado de la forma x^2 + bx + c: x^2 - 5x + 6",
+            options: ["(x - 3)(x - 2)", "(x - 6)(x + 1)", "(x + 3)(x + 2)", "(x - 5)(x + 6)"],
+            answer: "(x - 3)(x - 2)",
+            explanation: "Buscamos dos números que sumados den -5 y multiplicados den +6. Estos son -3 y -2. La factorización queda (x - 3)(x - 2), ¡nya! 🐱"
+          },
+          {
+            id: "qm2_2_5",
+            type: "true-false",
+            question: "La factorización del trinomio cuadrado perfecto x^2 + 10x + 25 corresponde a (x + 5)^2.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "La raíz de x^2 es x y la de 25 es 5. El doble producto es 2 * x * 5 = 10x, que es exactamente el término central. ¡Es un TCP! 🍭"
+          },
+          {
+            id: "qm2_2_6",
+            type: "fill-in-the-blank",
+            question: "Factoriza la diferencia de cuadrados perfectos: 9x^2 - 16",
+            options: ["(3x - 4)(3x + 4)", "(3x - 4)^2", "(9x - 16)(x + 1)", "(3x + 4)^2"],
+            answer: "(3x - 4)(3x + 4)",
+            explanation: "Calculamos las raíces de ambos términos: raíz(9x^2) = 3x, raíz(16) = 4. Expresamos en binomios conjugados: (3x - 4)(3x + 4). 🧸"
           }
         ]
       }
@@ -219,6 +336,30 @@ const mathLessonsData = [
             options: ["x = 3, x = 0.5", "x = -3, x = -0.5", "x = 2, x = 1.5", "x = 1, x = 3"],
             answer: "x = 3, x = 0.5",
             explanation: "a=2, b=-7, c=3. Discriminante = 49 - 24 = 25. x = [7 ± 5] / 4 => x1 = 3, x2 = 0.5. 🌸"
+          },
+          {
+            id: "qm3_1_4",
+            type: "multiple-choice",
+            question: "Resuelve la siguiente ecuación de primer grado con una incógnita: 5x - 7 = 3x + 9",
+            options: ["x = 8", "x = 4", "x = -8", "x = 2"],
+            answer: "x = 8",
+            explanation: "Restamos 3x a ambos lados: 2x - 7 = 9. Sumamos 7 a ambos lados: 2x = 16. Dividiendo entre 2: x = 8, ¡súper nya! 🌸"
+          },
+          {
+            id: "qm3_1_5",
+            type: "true-false",
+            question: "La ecuación cuadrática incompleta x^2 - 9 = 0 tiene como único resultado o solución x = 3.",
+            options: ["Verdadero", "Falso"],
+            answer: "Falso",
+            explanation: "¡Tiene dos soluciones! Al extraer raíz de 9, se obtienen soluciones tanto positivas como negativas: x = 3 y x = -3, ¡nya! ❄️"
+          },
+          {
+            id: "qm3_1_6",
+            type: "fill-in-the-blank",
+            question: "Resuelve la ecuación cuadrática factorizando por término común: x^2 - 5x = 0",
+            options: ["x = 0, x = 5", "x = 0, x = -5", "x = 5, x = -5", "x = 1, x = 5"],
+            answer: "x = 0, x = 5",
+            explanation: "Factorizando por término común obtenemos x(x - 5) = 0. De ahí, x1 = 0 y x2 - 5 = 0, lo cual da x2 = 5. Las soluciones son 0 y 5. 🍡"
           }
         ]
       }
@@ -640,9 +781,9 @@ function updateGlobalStats() {
   document.getElementById('stat-streak').innerText = state.userStreak + ' días';
   document.getElementById('stat-hearts').innerText = state.userHearts + ' / 5';
 
-  // Apply user title themed around CIIJ
-  let title = "Cadete CIIJ 🏫";
-  if (state.userXP < 50) title = "Cadete CIIJ 🏫";
+  // Apply user title themed around Mate-Go
+  let title = "Cadete Mate-Go 🏫";
+  if (state.userXP < 50) title = "Cadete Mate-Go 🏫";
   else if (state.userXP < 120) title = "Jubit-Investigador 🔭";
   else if (state.userXP < 250) title = "Operador de Fórmulas ⚙️";
   else if (state.userXP < 450) title = "Calculista Avanzado 📊";
@@ -744,6 +885,13 @@ function renderActiveView() {
   const activeBtn = document.getElementById('nav-btn-' + state.activeTab);
   if (activeBtn) activeBtn.classList.add('active');
 
+  // Synchronize mobile dropdown menu items
+  document.querySelectorAll('.dropdown-item').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  const activeDropdownBtn = document.querySelector(`#mobile-nav-dropdown .dropdown-item[data-tab="${state.activeTab}"]`);
+  if (activeDropdownBtn) activeDropdownBtn.classList.add('active');
+
   if (state.activeTab === 'dashboard') {
     renderDashboardMap();
   } else if (state.activeTab === 'codex') {
@@ -791,7 +939,8 @@ function renderDashboardMap() {
   const header = document.createElement('div');
   header.className = 'path-header';
   header.innerHTML = `
-    <h1>El Camino de Mate-Go 🔵🏫</h1>
+    <h2 style="font-family: 'Fredoka', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent-purple-hover); margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">El Instituto Juventud del Estado de México Presenta</h2>
+    <h1 style="margin-top: 0.25rem;">El Camino de Mate-Go 🔵🏫</h1>
     <p>Supera las temporadas del álgebra y modela el universo exacto al estilo de los Jubits.</p>
   `;
   container.appendChild(header);
@@ -954,6 +1103,7 @@ function startLessonFlow(lesson) {
   state.wrongAnswersCount = 0;
 
   lessonOverlay.classList.remove('hidden');
+  document.body.classList.add('lesson-active');
   document.getElementById('lesson-completion-zone').classList.add('hidden');
   document.getElementById('lesson-question-zone').classList.remove('hidden');
   document.getElementById('lesson-footer').className = 'lesson-footer';
@@ -1249,6 +1399,7 @@ function processNextQuestion() {
     triggerSound('incorrect');
     alert("💔 ¡Has perdido todos tus corazones! Regresa a la Tiendita de Mochi para recargarlos.");
     lessonOverlay.classList.add('hidden');
+    document.body.classList.remove('lesson-active');
     state.activeTab = 'store';
     renderActiveView();
     return;
@@ -1687,11 +1838,13 @@ function setupEventListeners() {
   document.getElementById('lesson-close-btn').addEventListener('click', () => {
     triggerSound('click');
     lessonOverlay.classList.add('hidden');
+    document.body.classList.remove('lesson-active');
   });
 
   document.getElementById('btn-conclude-lesson').addEventListener('click', () => {
     triggerSound('click');
     lessonOverlay.classList.add('hidden');
+    document.body.classList.remove('lesson-active');
   });
 
   document.getElementById('subtab-btn-stats').addEventListener('click', () => {
@@ -1707,6 +1860,70 @@ function setupEventListeners() {
   document.getElementById('stats-calc-btn').addEventListener('click', runStatsCalculator);
   document.getElementById('quad-calc-btn').addEventListener('click', runQuadraticCalculator);
   document.getElementById('cramer-calc-btn').addEventListener('click', runCramerCalculator);
+
+  // === Mobile Dropdown Navigation listeners ===
+  const menuToggleBtn = document.getElementById('menu-toggle-btn');
+  const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
+
+  if (menuToggleBtn && mobileNavDropdown) {
+    menuToggleBtn.addEventListener('click', () => {
+      triggerSound('click');
+      mobileNavDropdown.classList.toggle('hidden');
+    });
+  }
+
+  document.querySelectorAll('#mobile-nav-dropdown .dropdown-item').forEach((item) => {
+    item.addEventListener('click', () => {
+      const tab = item.getAttribute('data-tab');
+      if (tab) {
+        triggerSound('click');
+        state.activeTab = tab;
+        renderActiveView();
+        if (mobileNavDropdown) {
+          mobileNavDropdown.classList.add('hidden');
+        }
+      }
+    });
+  });
+
+  const dropdownLogoutBtn = document.getElementById('dropdown-logout-btn');
+  if (dropdownLogoutBtn) {
+    dropdownLogoutBtn.addEventListener('click', () => {
+      triggerSound('click');
+      if (mobileNavDropdown) {
+        mobileNavDropdown.classList.add('hidden');
+      }
+      const logoutBtn = document.getElementById('sidebar-logout-btn');
+      if (logoutBtn) logoutBtn.click();
+    });
+  }
+
+  // === Credits Modal listeners ===
+  const btnCreditsTrigger = document.getElementById('btn-credits-trigger');
+  const creditsModal = document.getElementById('credits-modal');
+  const btnCloseCredits = document.getElementById('btn-close-credits');
+  const btnCreditsOk = document.getElementById('btn-credits-ok');
+  const creditsJubitAvatar = document.getElementById('credits-jubit-avatar');
+
+  if (btnCreditsTrigger && creditsModal) {
+    btnCreditsTrigger.addEventListener('click', () => {
+      triggerSound('click');
+      if (creditsJubitAvatar) {
+        creditsJubitAvatar.innerHTML = getJubitSVG('blue', 120);
+      }
+      creditsModal.classList.remove('hidden');
+    });
+  }
+
+  const hideCredits = () => {
+    triggerSound('click');
+    if (creditsModal) {
+      creditsModal.classList.add('hidden');
+    }
+  };
+
+  if (btnCloseCredits) btnCloseCredits.addEventListener('click', hideCredits);
+  if (btnCreditsOk) btnCreditsOk.addEventListener('click', hideCredits);
 }
 
 function toggleSandboxSubtab(subtab) {
