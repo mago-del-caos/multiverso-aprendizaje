@@ -422,18 +422,176 @@ const playSound = {
 };
 
 // ==========================================
+// 2.1 JUBITS VECTOR DRAWING ENGINE (Dynamic SVGs)
+// ==========================================
+
+function getJubitSVG(color, size = 60) {
+  let bodyColor = '#5fa8ff'; // default blue
+  let shadowColor = '#0062cc';
+  let eyesStyle = 'cheerful';
+  let specialDecoration = '';
+  
+  const c = color ? color.toLowerCase() : 'blue';
+
+  if (c === 'blue' || c === 'azul') {
+    bodyColor = '#5fa8ff';
+    shadowColor = '#0062cc';
+  } else if (c === 'green' || c === 'verde') {
+    bodyColor = '#52b788';
+    shadowColor = '#2d6a4f';
+    eyesStyle = 'relaxed';
+    // Pink flower on head
+    specialDecoration = `
+      <!-- Flower -->
+      <g transform="translate(50, 15)">
+        <circle cx="0" cy="0" r="10" fill="#ff70a6" />
+        <circle cx="-10" cy="0" r="7" fill="#ff70a6" />
+        <circle cx="10" cy="0" r="7" fill="#ff70a6" />
+        <circle cx="0" cy="-10" r="7" fill="#ff70a6" />
+        <circle cx="0" cy="10" r="7" fill="#ff70a6" />
+        <circle cx="0" cy="0" r="5" fill="#ffd166" />
+      </g>
+    `;
+  } else if (c === 'yellow' || c === 'amarillo') {
+    bodyColor = '#ffd166';
+    shadowColor = '#ffb703';
+    // Black round wire glasses and brown book
+    specialDecoration = `
+      <!-- Glasses -->
+      <g stroke="#333" stroke-width="3" fill="none">
+        <circle cx="34" cy="45" r="12" />
+        <circle cx="66" cy="45" r="12" />
+        <line x1="46" y1="45" x2="54" y2="45" />
+        <line x1="22" y1="42" x2="16" y2="46" />
+        <line x1="78" y1="42" x2="84" y2="46" />
+      </g>
+      <!-- Book -->
+      <g transform="translate(72, 60)">
+        <rect x="0" y="0" width="18" height="24" rx="2" fill="#9e2a2b" stroke="#333" stroke-width="2"/>
+        <line x1="4" y1="4" x2="14" y2="4" stroke="white" stroke-width="2" />
+        <text x="4" y="16" font-size="9" font-family="monospace" fill="white" font-weight="bold">JB</text>
+      </g>
+    `;
+  } else if (c === 'red' || c === 'rojo') {
+    bodyColor = '#9e2a2b';
+    shadowColor = '#5f0f11';
+    eyesStyle = 'determined';
+    // Compass
+    specialDecoration = `
+      <!-- Compass -->
+      <g transform="translate(78, 56)">
+        <circle cx="0" cy="0" r="10" fill="#ffd166" stroke="#333" stroke-width="2" />
+        <circle cx="0" cy="0" r="7" fill="white" />
+        <line x1="-4" y1="4" x2="4" y2="-4" stroke="red" stroke-width="2" />
+        <line x1="-4" y1="-4" x2="4" y2="4" stroke="blue" stroke-width="1.5" />
+      </g>
+    `;
+  } else if (c === 'purple' || c === 'purpura' || c === 'púrpura') {
+    bodyColor = '#c084fc';
+    shadowColor = '#8b5cf6';
+    eyesStyle = 'dreamy';
+    // Curl swirl whorl on head
+    specialDecoration = `
+      <!-- Swirl Whorl -->
+      <path d="M 50,22 Q 52,12 45,15 Q 40,18 43,22 Q 45,25 48,24" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round" />
+    `;
+  }
+
+  // Eyes
+  let eyesMarkup = `
+    <circle cx="34" cy="48" r="12" fill="#111" />
+    <circle cx="31" cy="44" r="4" fill="white" />
+    <circle cx="36" cy="51" r="1.5" fill="white" />
+    
+    <circle cx="66" cy="48" r="12" fill="#111" />
+    <circle cx="63" cy="44" r="4" fill="white" />
+    <circle cx="68" cy="51" r="1.5" fill="white" />
+  `;
+
+  if (eyesStyle === 'relaxed') {
+    eyesMarkup = `
+      <g fill="#111">
+        <ellipse cx="34" cy="48" rx="12" ry="7" />
+        <ellipse cx="66" cy="48" rx="12" ry="7" />
+      </g>
+      <path d="M 22,48 Q 34,40 46,48 Z" fill="${bodyColor}" stroke="#333" stroke-width="2" />
+      <path d="M 54,48 Q 66,40 78,48 Z" fill="${bodyColor}" stroke="#333" stroke-width="2" />
+      <circle cx="34" cy="50" r="2.5" fill="white" />
+      <circle cx="66" cy="50" r="2.5" fill="white" />
+    `;
+  } else if (eyesStyle === 'determined') {
+    eyesMarkup = `
+      <circle cx="34" cy="48" r="12" fill="#111" />
+      <circle cx="31" cy="44" r="4" fill="white" />
+      <path d="M 20,38 L 40,43" stroke="#333" stroke-width="3" stroke-linecap="round" />
+      
+      <circle cx="66" cy="48" r="12" fill="#111" />
+      <circle cx="63" cy="44" r="4" fill="white" />
+      <path d="M 80,38 L 60,43" stroke="#333" stroke-width="3" stroke-linecap="round" />
+    `;
+  } else if (eyesStyle === 'dreamy') {
+    eyesMarkup = `
+      <circle cx="34" cy="48" r="12" fill="#111" />
+      <circle cx="31" cy="42" r="4" fill="white" />
+      <circle cx="36" cy="46" r="3" fill="#8b5cf6" opacity="0.6" />
+      <circle cx="35" cy="52" r="2" fill="white" />
+
+      <circle cx="66" cy="48" r="12" fill="#111" />
+      <circle cx="63" cy="42" r="4" fill="white" />
+      <circle cx="68" cy="46" r="3" fill="#8b5cf6" opacity="0.6" />
+      <circle cx="67" cy="52" r="2" fill="white" />
+    `;
+  }
+
+  // Mouth
+  let mouthMarkup = `
+    <path d="M 42,62 Q 50,70 58,62" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" />
+    <path d="M 46,65 Q 50,72 54,65 Z" fill="#ff70a6" />
+  `;
+
+  if (eyesStyle === 'determined') {
+    mouthMarkup = `
+      <path d="M 40,62 Q 50,68 60,62" fill="white" stroke="#111" stroke-width="3" stroke-linecap="round" />
+      <line x1="42" y1="62" x2="58" y2="62" stroke="#333" stroke-width="1.5" />
+    `;
+  }
+
+  return `
+    <svg viewBox="0 0 100 100" class="jubit-svg" style="width: 100%; height: 100%;">
+      <ellipse cx="50" cy="90" rx="35" ry="8" fill="rgba(0,0,0,0.15)" />
+      <g stroke="#333" stroke-width="3" stroke-linecap="round">
+        <rect x="5" y="50" width="12" height="24" rx="6" fill="${bodyColor}" transform="rotate(25, 11, 62)" />
+        <rect x="83" y="50" width="12" height="24" rx="6" fill="${bodyColor}" transform="rotate(-25, 89, 62)" />
+      </g>
+      <g stroke="#333" stroke-width="3" stroke-linecap="round">
+        <rect x="30" y="78" width="14" height="15" rx="7" fill="${bodyColor}" />
+        <rect x="56" y="78" width="14" height="15" rx="7" fill="${bodyColor}" />
+      </g>
+      <circle cx="50" cy="55" r="38" fill="${bodyColor}" stroke="#333" stroke-width="3" />
+      <path d="M 20,35 A 32,32 0 0,1 80,35" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.25" />
+      <rect x="30" y="58" width="40" height="20" rx="10" fill="white" stroke="#333" stroke-width="2" opacity="0.95" />
+      <text x="50" y="73" font-family="'Outfit', 'Fredoka', sans-serif" font-weight="900" font-size="14" fill="#111" text-anchor="middle" letter-spacing="1">JB</text>
+      ${eyesMarkup}
+      ${mouthMarkup}
+      ${specialDecoration}
+    </svg>
+  `;
+}
+
+// ==========================================
 // 3. APPLICATION STATE CONTROLLER
 // ==========================================
 
 const state = {
   activeTab: 'dashboard',
-  userXP: parseInt(localStorage.getItem('philo_xp'), 10) || 0,
-  userGems: parseInt(localStorage.getItem('philo_gems'), 10) || 100,
-  userHearts: parseInt(localStorage.getItem('philo_hearts'), 10) || 5,
-  userStreak: parseInt(localStorage.getItem('philo_streak'), 10) || 1,
-  mathCompletedLessons: JSON.parse(localStorage.getItem('math_completed_lessons')) || [],
-  hasStreakShield: localStorage.getItem('philo_shield') === 'true',
-  currentTheme: localStorage.getItem('philo_theme') || 'mochi-pink',
+  username: localStorage.getItem('jubit_username') || '',
+  userXP: parseInt(localStorage.getItem('jubit_xp'), 10) || parseInt(localStorage.getItem('philo_xp'), 10) || 0,
+  userGems: parseInt(localStorage.getItem('jubit_gems'), 10) || parseInt(localStorage.getItem('philo_gems'), 10) || 100,
+  userHearts: parseInt(localStorage.getItem('jubit_hearts'), 10) || parseInt(localStorage.getItem('philo_hearts'), 10) || 5,
+  userStreak: parseInt(localStorage.getItem('jubit_streak'), 10) || parseInt(localStorage.getItem('philo_streak'), 10) || 1,
+  mathCompletedLessons: JSON.parse(localStorage.getItem('jubit_completed_lessons')) || JSON.parse(localStorage.getItem('math_completed_lessons')) || [],
+  hasStreakShield: (localStorage.getItem('jubit_shield') || localStorage.getItem('philo_shield')) === 'true',
+  currentTheme: localStorage.getItem('jubit_theme') || localStorage.getItem('philo_theme') || 'mochi-pink',
   musicEnabled: false,
   effectsEnabled: true,
 
@@ -449,17 +607,18 @@ const state = {
   isCorrect: false,
   lessonFinished: false,
   wrongAnswersCount: 0,
-  mentorText: "¡Hola, nya! ¡Te doy la bienvenida a Mate-go! 🌸✨"
+  mentorText: "¡Hola! Te doy la bienvenida a Jubit-Maths. ¡Vamos a divertirnos resolviendo problemas! 🌸✨"
 };
 
 function saveState() {
-  localStorage.setItem('philo_xp', state.userXP);
-  localStorage.setItem('philo_gems', state.userGems);
-  localStorage.setItem('philo_hearts', state.userHearts);
-  localStorage.setItem('philo_streak', state.userStreak);
-  localStorage.setItem('math_completed_lessons', JSON.stringify(state.mathCompletedLessons));
-  localStorage.setItem('philo_shield', state.hasStreakShield);
-  localStorage.setItem('philo_theme', state.currentTheme);
+  localStorage.setItem('jubit_xp', state.userXP);
+  localStorage.setItem('jubit_gems', state.userGems);
+  localStorage.setItem('jubit_hearts', state.userHearts);
+  localStorage.setItem('jubit_streak', state.userStreak);
+  localStorage.setItem('jubit_completed_lessons', JSON.stringify(state.mathCompletedLessons));
+  localStorage.setItem('jubit_shield', state.hasStreakShield);
+  localStorage.setItem('jubit_theme', state.currentTheme);
+  localStorage.setItem('jubit_username', state.username);
 }
 
 // ==========================================
@@ -475,16 +634,30 @@ function updateGlobalStats() {
   document.getElementById('stat-streak').innerText = state.userStreak + ' días';
   document.getElementById('stat-hearts').innerText = state.userHearts + ' / 5';
 
-  // Apply user title
-  let title = "Cero Absoluto 🎀";
-  if (state.userXP < 50) title = "Cero Absoluto 🎀";
-  else if (state.userXP < 120) title = "Geómetra Aprendiz 🐱";
-  else if (state.userXP < 250) title = "Calculista de Álgebra 🌸";
-  else if (state.userXP < 450) title = "Científico de Ecuaciones 🎀";
-  else if (state.userXP < 700) title = "Maestro Pitagórico 📐";
+  // Apply user title themed around CIIJ
+  let title = "Cadete CIIJ 🏫";
+  if (state.userXP < 50) title = "Cadete CIIJ 🏫";
+  else if (state.userXP < 120) title = "Jubit-Investigador 🔭";
+  else if (state.userXP < 250) title = "Operador de Fórmulas ⚙️";
+  else if (state.userXP < 450) title = "Calculista Avanzado 📊";
+  else if (state.userXP < 700) title = "Innovador Tecnológico 💡";
   else title = "Arquitecto del Infinito 👑";
 
-  document.getElementById('user-avatar').innerText = '🐱';
+  // Sidebar dynamic branding & avatar
+  let activeAvatarColor = 'blue';
+  if (state.currentTheme === 'mint-icecream') activeAvatarColor = 'green';
+  else if (state.currentTheme === 'cyber-kawaii') activeAvatarColor = 'purple';
+  else if (state.currentTheme === 'chalkboard-math') activeAvatarColor = 'yellow';
+
+  const userAvatar = document.getElementById('user-avatar');
+  if (userAvatar) userAvatar.innerHTML = getJubitSVG(activeAvatarColor);
+  
+  const logoOwl = document.querySelector('.logo-owl');
+  if (logoOwl) logoOwl.innerHTML = getJubitSVG('blue');
+
+  const sidebarUsername = document.getElementById('sidebar-username');
+  if (sidebarUsername) sidebarUsername.innerText = state.username || 'Aprendiz';
+
   document.getElementById('user-title').innerText = title;
 }
 
@@ -569,6 +742,19 @@ function renderActiveView() {
     renderDashboardMap();
   } else if (state.activeTab === 'codex') {
     renderCodexGrid();
+  } else if (state.activeTab === 'store') {
+    const storeHeader = document.querySelector('.store-header');
+    if (storeHeader && !storeHeader.querySelector('.store-jubit-helper')) {
+      const helper = document.createElement('div');
+      helper.className = 'store-jubit-helper';
+      helper.style.width = '110px';
+      helper.style.height = '110px';
+      helper.style.margin = '0 auto 1rem';
+      helper.innerHTML = getJubitSVG('purple');
+      storeHeader.insertBefore(helper, storeHeader.firstChild);
+    }
+  } else if (state.activeTab === 'sandbox') {
+    renderSubtabHelper('stats');
   }
 }
 
@@ -599,8 +785,8 @@ function renderDashboardMap() {
   const header = document.createElement('div');
   header.className = 'path-header';
   header.innerHTML = `
-    <h1>El Camino de Mate-go 🐱🌸</h1>
-    <p>Supera las temporadas del álgebra y modela el universo exacto de forma muy dulce.</p>
+    <h1>El Camino de Jubit-Maths 🔵🏫</h1>
+    <p>Supera las temporadas del álgebra y modela el universo exacto al estilo de los Jubits.</p>
   `;
   container.appendChild(header);
 
@@ -779,8 +965,12 @@ function populateQuestion() {
   const displayMentor = document.getElementById('mentor-avatar-display');
   const quoteDisplay = document.getElementById('lesson-mentor-quote');
 
-  displayMentor.innerText = '🐱';
-  quoteDisplay.innerText = '💬 ¡Hola, nya! Resolvamos este problema juntos...';
+  let jColor = 'blue';
+  if (state.activeLesson.id.includes('m2')) jColor = 'green';
+  else if (state.activeLesson.id.includes('m3')) jColor = 'red';
+
+  displayMentor.innerHTML = getJubitSVG(jColor);
+  quoteDisplay.innerText = `💬 ¡Hola! Yo soy tu Jubit ${jColor === 'blue' ? 'Azul' : jColor === 'green' ? 'Verde' : 'Rojo'}. ¡Resolvamos este reto juntos!`;
 
   const interactiveContainer = document.getElementById('question-interactive-container');
   interactiveContainer.innerHTML = '';
@@ -1000,15 +1190,19 @@ function processCheckAnswer() {
   defaultFooterInstructions.classList.add('hidden');
   feedbackBox.classList.remove('hidden');
 
+  let jColor = 'blue';
+  if (state.activeLesson.id.includes('m2')) jColor = 'green';
+  else if (state.activeLesson.id.includes('m3')) jColor = 'red';
+
   if (correct) {
     triggerSound('correct');
-    displayMentor.innerText = '😸';
+    displayMentor.innerHTML = getJubitSVG(jColor);
     
     const quotes = [
-      "¡Nya! ¡Excelente cálculo! Exacto y perfecto. 🌸✨",
-      "¡Súper correcto! ¡Te has ganado un caramelo virtual! 🍭🐱",
-      "¡Increíble! ¡Eres un genio matemático! 🍡🎀",
-      "¡Eso es! Todo operado de forma maravillosa. 🧸✨"
+      "¡Excelente cálculo! Exacto y perfecto. 🚀✨",
+      "¡Súper correcto! ¡Te has ganado un dulce virtual! 🍭🍡",
+      "¡Increíble! ¡Tu razonamiento matemático es impecable! 🌸🏫",
+      "¡Eso es! Operado de forma maravillosa. 🌟✨"
     ];
     quoteDisplay.innerText = '💬 ' + quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -1018,13 +1212,13 @@ function processCheckAnswer() {
     document.getElementById('feedback-desc-box').innerText = question.explanation;
   } else {
     triggerSound('incorrect');
-    displayMentor.innerText = '😿';
+    displayMentor.innerHTML = getJubitSVG(jColor);
 
     const quotes = [
-      "¡Uyuuy! Casi lo tienes... ¡revisa el signo, nya! 🧸🎀",
-      "¡Oh noes! Recuerda la ley de signos... ¡tú puedes! 😿🍭",
-      "No te preocupes, ¡vamos a intentarlo de nuevo! 🌸✨",
-      "¡Uy! Un error de cálculo, ¡pero sigamos practicando, nya! 🍡"
+      "¡Casi lo tienes! Revisa el signo, ¡tú puedes! 🧸🎀",
+      "¡Oh noes! Recuerda la ley de signos... ¡tú puedes! 🍭",
+      "No te preocupes, ¡vamos a resolverlo con calma! 🌸✨",
+      "¡Cerca! Un pequeño error de cálculo, ¡pero sigue intentándolo!"
     ];
     quoteDisplay.innerText = '💬 ' + quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -1087,8 +1281,11 @@ function processNextQuestion() {
     document.getElementById('lesson-completion-zone').classList.remove('hidden');
     document.getElementById('lesson-progress-bar').style.width = '100%';
 
-    document.getElementById('completion-emoji-display').innerText = '🐱✨';
-    document.getElementById('completion-message-display').innerText = '¡Nya! Has resuelto la lección de maravilla. ¡Caramelos para ti! 🍭🍡';
+    document.getElementById('completion-emoji-display').innerHTML = getJubitSVG('blue');
+    document.getElementById('completion-emoji-display').style.width = '120px';
+    document.getElementById('completion-emoji-display').style.height = '120px';
+    document.getElementById('completion-emoji-display').style.margin = '0 auto 1.5rem';
+    document.getElementById('completion-message-display').innerText = '¡Felicidades! Has completado la lección de manera excepcional. ¡Tus dulces y experiencia han sido guardados! 🍭🍡';
     
     document.getElementById('completion-xp-award').innerText = '+' + xpEarned;
     document.getElementById('completion-gems-award').innerText = '+' + gemsEarned + ' 🍭';
@@ -1496,6 +1693,126 @@ function toggleSandboxSubtab(subtab) {
 
   document.getElementById('subtab-btn-' + subtab).classList.add('active');
   document.getElementById('subtab-content-' + subtab).classList.remove('hidden');
+  
+  renderSubtabHelper(subtab);
+}
+
+function renderSubtabHelper(subtab) {
+  const subtabContent = document.getElementById('subtab-content-' + subtab);
+  if (subtabContent) {
+    let helperColor = 'green';
+    if (subtab === 'quad') helperColor = 'red';
+    else if (subtab === 'cramer') helperColor = 'yellow';
+    
+    // Remove existing subtab helpers if any
+    subtabContent.querySelectorAll('.subtab-jubit-helper').forEach(h => h.remove());
+    
+    const helper = document.createElement('div');
+    helper.className = 'subtab-jubit-helper';
+    helper.style.width = '90px';
+    helper.style.height = '90px';
+    helper.style.margin = '0 auto 1rem';
+    helper.style.display = 'block';
+    helper.innerHTML = getJubitSVG(helperColor);
+    
+    // Insert before first child
+    subtabContent.insertBefore(helper, subtabContent.firstChild);
+  }
+}
+
+function setupWelcomeScreen() {
+  const welcomeScreen = document.getElementById('welcome-screen');
+  const newPlayerSection = document.getElementById('new-player-section');
+  const returningPlayerSection = document.getElementById('returning-player-section');
+  const usernameInput = document.getElementById('username-input');
+  const welcomeErrorMsg = document.getElementById('welcome-error-msg');
+  
+  // Render floating Jubits in welcome row
+  const floatRow = document.querySelector('.floating-jubits-row');
+  if (floatRow) {
+    floatRow.innerHTML = `
+      <div class="welcome-jubit animation-float-1" style="width: 50px; height: 50px;">${getJubitSVG('blue')}</div>
+      <div class="welcome-jubit animation-float-2" style="width: 50px; height: 50px;">${getJubitSVG('green')}</div>
+      <div class="welcome-jubit animation-float-3" style="width: 50px; height: 50px;">${getJubitSVG('yellow')}</div>
+      <div class="welcome-jubit animation-float-4" style="width: 50px; height: 50px;">${getJubitSVG('red')}</div>
+      <div class="welcome-jubit animation-float-5" style="width: 50px; height: 50px;">${getJubitSVG('purple')}</div>
+    `;
+  }
+
+  // Check state username
+  if (state.username) {
+    document.getElementById('returning-username-display').innerText = state.username;
+    
+    // Render dynamic avatar on returning spot
+    const returningAvatarSpot = document.querySelector('.returning-avatar-spot');
+    if (returningAvatarSpot) {
+      let avatarColor = 'blue';
+      if (state.currentTheme === 'mint-icecream') avatarColor = 'green';
+      else if (state.currentTheme === 'cyber-kawaii') avatarColor = 'purple';
+      else if (state.currentTheme === 'chalkboard-math') avatarColor = 'yellow';
+      returningAvatarSpot.innerHTML = getJubitSVG(avatarColor);
+      returningAvatarSpot.style.width = '100px';
+      returningAvatarSpot.style.height = '100px';
+      returningAvatarSpot.style.margin = '1rem auto';
+    }
+    
+    newPlayerSection.classList.add('hidden');
+    returningPlayerSection.classList.remove('hidden');
+    welcomeScreen.classList.remove('fade-out');
+  } else {
+    newPlayerSection.classList.remove('hidden');
+    returningPlayerSection.classList.add('hidden');
+    welcomeScreen.classList.remove('fade-out');
+  }
+
+  // Handle new player start
+  document.getElementById('btn-start-game').addEventListener('click', () => {
+    const name = usernameInput.value.trim();
+    if (!name) {
+      welcomeErrorMsg.classList.remove('hidden');
+      return;
+    }
+    welcomeErrorMsg.classList.add('hidden');
+    state.username = name;
+    saveState();
+    updateGlobalStats();
+    
+    // Play sound click and fade out welcome screen
+    triggerSound('click');
+    welcomeScreen.classList.add('fade-out');
+  });
+
+  // Support Enter key
+  usernameInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('btn-start-game').click();
+    }
+  });
+
+  // Handle returning player continue
+  document.getElementById('btn-continue-game').addEventListener('click', () => {
+    triggerSound('click');
+    welcomeScreen.classList.add('fade-out');
+  });
+
+  // Handle changing user
+  document.getElementById('btn-change-user').addEventListener('click', () => {
+    triggerSound('click');
+    usernameInput.value = '';
+    state.username = '';
+    newPlayerSection.classList.remove('hidden');
+    returningPlayerSection.classList.add('hidden');
+  });
+
+  // Sidebar logout click
+  document.getElementById('sidebar-logout-btn').addEventListener('click', () => {
+    triggerSound('click');
+    if (confirm('¿Estás seguro de que quieres cerrar sesión? Esto te devolverá a la pantalla de inicio pero mantendrá tu progreso local.')) {
+      welcomeScreen.classList.remove('fade-out');
+      usernameInput.value = state.username;
+      setupWelcomeScreen();
+    }
+  });
 }
 
 // ==========================================
@@ -1505,6 +1822,7 @@ function toggleSandboxSubtab(subtab) {
 function initApp() {
   applyTheme(state.currentTheme);
   setupEventListeners();
+  setupWelcomeScreen();
   updateGlobalStats();
   renderActiveView();
 }
