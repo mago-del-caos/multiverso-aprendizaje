@@ -16,8 +16,7 @@
   <div id="welcome-screen" class="welcome-overlay">
     <div class="welcome-card">
       <div class="welcome-logo-container">
-        <p class="welcome-institution" style="font-family: 'Fredoka', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent-purple-hover); margin-bottom: 0.75rem; text-align: center; text-transform: uppercase; letter-spacing: 0.5px;">El Instituto Juventud del Estado de México Presenta</p>
-        <button id="btn-credits-trigger" class="btn-secondary credits-badge-btn" style="margin-bottom: 1.5rem; font-size: 0.9rem; padding: 0.5rem 1.25rem;">📖 Créditos</button>
+        <p class="institution-banner">El Instituto Juventud del Estado de México Presenta</p>
         <div class="floating-jubits-row">
           <div class="welcome-jubit animation-float-1">🔵</div>
           <div class="welcome-jubit animation-float-2">🟢</div>
@@ -45,6 +44,11 @@
           <button id="btn-continue-game" class="btn-primary welcome-btn">Continuar Aventura 🎮</button>
           <button id="btn-change-user" class="btn-secondary welcome-btn">Cambiar de Jugador 🔄</button>
         </div>
+      </div>
+
+      <!-- Credits Button at the very bottom -->
+      <div class="welcome-footer-credits" style="margin-top: 1.5rem; width: 100%; display: flex; justify-content: center; border-top: 2px dashed rgba(0,0,0,0.1); padding-top: 1rem;">
+        <button id="btn-credits-trigger" class="btn-secondary credits-badge-btn" style="font-size: 0.95rem; padding: 0.6rem 1.5rem; width: 100%; max-width: 250px;">📖 Créditos del Proyecto</button>
       </div>
     </div>
   </div>
@@ -453,6 +457,7 @@
     <footer id="lesson-footer" class="lesson-footer">
       <div class="lesson-footer-content">
         <div id="feedback-slide-box" class="feedback-slide hidden">
+          <div id="feedback-mascot" class="feedback-mascot-avatar" style="display: none;"></div>
           <div id="feedback-icon-box" class="feedback-icon">✔️</div>
           <div class="feedback-details">
             <h4 id="feedback-title-box">¡Excelente Trabajo!</h4>

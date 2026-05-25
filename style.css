@@ -2112,3 +2112,70 @@ body.lesson-active .sidebar,
   }
 }
 
+/* ==========================================
+   6. INSTITUTIONAL BANNER, UNLIMITED & MASCOT
+   ========================================== */
+
+/* Mexican Flag Green and Yellow Institution Banner */
+.institution-banner {
+  background-color: #006847 !important; /* Verde Bandera */
+  color: #ffeb3b !important; /* Letras Amarillas */
+  border: 4px solid var(--text-primary) !important;
+  border-radius: 1.25rem !important;
+  padding: 0.65rem 1.25rem !important;
+  font-family: var(--font-title) !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  box-shadow: 4px 4px 0px var(--text-primary) !important;
+  margin-bottom: 1.5rem !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
+  transform: rotate(-1deg);
+  transition: transform 0.2s ease;
+}
+
+.institution-banner:hover {
+  transform: rotate(1deg) scale(1.02);
+}
+
+/* Duolingo Cheering Mascot Avatar inside feedback overlay */
+.feedback-mascot-avatar {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-right: 1rem;
+}
+
+.feedback-mascot-avatar.correct-dance svg {
+  animation: feedbackDance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+}
+
+.feedback-mascot-avatar.incorrect-sigh svg {
+  animation: feedbackSigh 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes feedbackDance {
+  0% { transform: translateY(0) scale(1) rotate(-8deg); }
+  100% { transform: translateY(-18px) scaleY(1.15) rotate(8deg); }
+}
+
+@keyframes feedbackSigh {
+  0% { transform: translateY(0) scale(1) rotate(0); }
+  50% { transform: translateY(4px) scale(0.95, 0.9) rotate(-2deg); }
+  100% { transform: translateY(0) scale(1) rotate(0); }
+}
+
+/* Custom CSS to hide active navigation bar on gameplay */
+body.lesson-active .sidebar,
+#lesson-overlay:not(.hidden) ~ #app-screen .sidebar,
+#lesson-overlay:not(.hidden) ~ .sidebar {
+  display: none !important;
+}
+
+

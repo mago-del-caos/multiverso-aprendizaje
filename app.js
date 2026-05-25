@@ -177,6 +177,44 @@ const mathLessonsData = [
             explanation: "Dividimos los coeficientes (6 / 2 = 3) y restamos los exponentes de las potencias de diez (12 - 4 = 8), dando 3 x 10^8. 💡"
           }
         ]
+      },
+      {
+        id: "m1_exam",
+        name: "🔬 Mini-Prueba: Reto de la Temporada 1",
+        xpAward: 40,
+        questions: [
+          {
+            id: "qm1_ex_1",
+            type: "explanation",
+            question: "¡Prepárate para tu Mini-Prueba de la Temporada 1! 🚀",
+            text: "En este reto, evaluarás lo aprendido sobre Tendencia Central, Leyes de los Exponentes y Notación Científica. Recuerda: ¡las leyes se suman al multiplicar bases iguales, y el promedio suma y divide! ¡Mucho éxito!",
+            explanation: "¡Comencemos la prueba con todo el entusiasmo, nya! 💙"
+          },
+          {
+            id: "qm1_ex_2",
+            type: "multiple-choice",
+            question: "Calcula la media de los siguientes datos de producción: 15, 20, 25, 30, 35.",
+            options: ["20", "25", "30", "27.5"],
+            answer: "25",
+            explanation: "Sumamos los datos: 15 + 20 + 25 + 30 + 35 = 125. Dividimos entre 5 y obtenemos exactamente 25. ¡Excelente! 🍡"
+          },
+          {
+            id: "qm1_ex_3",
+            type: "multiple-choice",
+            question: "Simplifica la expresión utilizando leyes de exponentes: (2x^2)^4",
+            options: ["8x^8", "16x^8", "16x^6", "8x^6"],
+            answer: "16x^8",
+            explanation: "Elevamos 2 al exponente 4: 2^4 = 16. Multiplicamos exponentes: (x^2)^4 = x^8. Resultado: 16x^8. 🧸"
+          },
+          {
+            id: "qm1_ex_4",
+            type: "true-false",
+            question: "La velocidad de la luz es aproximadamente 300,000,000 m/s. En notación científica esto se escribe como 3.0 x 10^8 m/s.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "Desplazamos el punto decimal 8 posiciones a la izquierda, por lo que el exponente de base diez es 8. ¡Es correcto! 💡"
+          }
+        ]
       }
     ]
   },
@@ -196,7 +234,7 @@ const mathLessonsData = [
           {
             id: "qm2_1_1",
             type: "multiple-choice",
-            question: "Simplifica la siguiente suma algebraica: (4x^2 + 3xy - 5y^2) + (6xy - 7x^2 + 8y^2) + (-xy - x^2 - 2y^2)",
+            question: "Simplifica the following sum algebraic: (4x^2 + 3xy - 5y^2) + (6xy - 7x^2 + 8y^2) + (-xy - x^2 - 2y^2)",
             options: ["-4x^2 + 8xy + y^2", "-4x^2 + 9xy + y^2", "-3x^2 + 8xy - y^2", "x^2 + xy + y^2"],
             answer: "-4x^2 + 8xy + y^2",
             explanation: "Agrupamos semejantes: 4 - 7 - 1 = -4x^2; 3 + 6 - 1 = 8xy; -5 + 8 - 2 = 1y^2. ¡Listo, nya! 🐱"
@@ -297,6 +335,44 @@ const mathLessonsData = [
             explanation: "Calculamos las raíces de ambos términos: raíz(9x^2) = 3x, raíz(16) = 4. Expresamos en binomios conjugados: (3x - 4)(3x + 4). 🧸"
           }
         ]
+      },
+      {
+        id: "m2_exam",
+        name: "🔬 Mini-Prueba: Reto de la Temporada 2",
+        xpAward: 45,
+        questions: [
+          {
+            id: "qm2_ex_1",
+            type: "explanation",
+            question: "¡Prepárate para tu Mini-Prueba de la Temporada 2! 🚀",
+            text: "Esta miniprueba evaluará tu dominio de binomios conjugados, binomios al cuadrado, términos comunes y técnicas avanzadas de factorización por término común y diferencias de cuadrados.",
+            explanation: "¡Saca a relucir tu magia algebraica, nya! 💚"
+          },
+          {
+            id: "qm2_ex_2",
+            type: "multiple-choice",
+            question: "Desarrolla el producto notable: (x - 6)(x + 6)",
+            options: ["x^2 - 12", "x^2 - 36", "x^2 + 36", "x^2 - 12x - 36"],
+            answer: "x^2 - 36",
+            explanation: "Son binomios conjugados, por lo que el desarrollo es una diferencia de cuadrados: (x)^2 - (6)^2 = x^2 - 36. 🌸"
+          },
+          {
+            id: "qm2_ex_3",
+            type: "multiple-choice",
+            question: "Factoriza el siguiente trinomio cuadrado: x^2 - 8x + 12",
+            options: ["(x - 6)(x - 2)", "(x - 4)(x - 3)", "(x + 6)(x + 2)", "(x - 12)(x + 1)"],
+            answer: "(x - 6)(x - 2)",
+            explanation: "Buscamos dos números que sumados den -8 y multiplicados den 12. Estos son -6 y -2. Queda (x - 6)(x - 2). 🐱"
+          },
+          {
+            id: "qm2_ex_4",
+            type: "true-false",
+            question: "La expresión factorizada de 25x^2 - 4y^2 corresponde a (5x - 2y)(5x + 2y).",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "Al ser una diferencia de cuadrados, extraemos raíces raíz(25x^2)=5x y raíz(4y^2)=2y, y escribimos los binomios conjugados. 🍡"
+          }
+        ]
       }
     ]
   },
@@ -360,6 +436,36 @@ const mathLessonsData = [
             options: ["x = 0, x = 5", "x = 0, x = -5", "x = 5, x = -5", "x = 1, x = 5"],
             answer: "x = 0, x = 5",
             explanation: "Factorizando por término común obtenemos x(x - 5) = 0. De ahí, x1 = 0 y x2 - 5 = 0, lo cual da x2 = 5. Las soluciones son 0 y 5. 🍡"
+          }
+        ]
+      },
+      {
+        id: "m3_exam",
+        name: "🔬 Mini-Prueba: Reto de la Temporada 3",
+        xpAward: 50,
+        questions: [
+          {
+            id: "qm3_ex_1",
+            type: "explanation",
+            question: "¡Prepárate para tu Mini-Prueba Final! 🏆",
+            text: "Has llegado al reto culminante. Pondrás a prueba tus habilidades resolviendo ecuaciones lineales complejas y aplicando la fórmula general para ecuaciones cuadráticas de segundo grado.",
+            explanation: "¡Demuestra que eres el Arquitecto del Infinito! ❤️"
+          },
+          {
+            id: "qm3_ex_2",
+            type: "multiple-choice",
+            question: "Resuelve la ecuación lineal para x: 4(x - 2) + 3 = 2(x + 5) - 1",
+            options: ["x = 7", "x = 4", "x = 5", "x = 8"],
+            answer: "x = 7",
+            explanation: "Desarrollamos: 4x - 5 = 2x + 9 => 2x = 14 => x = 7. ¡Perfecto, nya! 🍭"
+          },
+          {
+            id: "qm3_ex_3",
+            type: "multiple-choice",
+            question: "Resuelve por fórmula general cuadrática: x^2 - 5x + 6 = 0",
+            options: ["x = 3, x = 2", "x = -3, x = -2", "x = 6, x = 1", "x = 5, x = -6"],
+            answer: "x = 3, x = 2",
+            explanation: "a=1, b=-5, c=6. Discriminante = 25 - 24 = 1. x = [5 ± 1] / 2 => x1 = 3, x2 = 2. 🧸"
           }
         ]
       }
@@ -779,7 +885,7 @@ function updateGlobalStats() {
   document.getElementById('stat-xp').innerText = state.userXP + ' XP';
   document.getElementById('stat-gems').innerText = state.userGems + ' 🍭';
   document.getElementById('stat-streak').innerText = state.userStreak + ' días';
-  document.getElementById('stat-hearts').innerText = state.userHearts + ' / 5';
+  document.getElementById('stat-hearts').innerText = 'Ilimitadas 💖';
 
   // Apply user title themed around Mate-Go
   let title = "Cadete Mate-Go 🏫";
@@ -917,19 +1023,11 @@ function renderActiveView() {
 // ==========================================
 
 function isModuleUnlocked(moduleId) {
-  if (moduleId === 1) return true;
-  const prevModule = mathLessonsData.find(m => m.id === moduleId - 1);
-  if (!prevModule) return false;
-  return prevModule.lessons.every(lesson => state.mathCompletedLessons.includes(lesson.id));
+  return true; // Todos los niveles abiertos para libre acceso
 }
 
 function isLessonUnlocked(lessonId, moduleId) {
-  if (!isModuleUnlocked(moduleId)) return false;
-  const module = mathLessonsData.find(m => m.id === moduleId);
-  const lessonIdx = module.lessons.findIndex(l => l.id === lessonId);
-  if (lessonIdx === 0) return true;
-  const prevLesson = module.lessons[lessonIdx - 1];
-  return state.mathCompletedLessons.includes(prevLesson.id);
+  return true; // Todos los niveles abiertos para libre acceso
 }
 
 function renderDashboardMap() {
@@ -939,7 +1037,7 @@ function renderDashboardMap() {
   const header = document.createElement('div');
   header.className = 'path-header';
   header.innerHTML = `
-    <h2 style="font-family: 'Fredoka', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent-purple-hover); margin: 0; text-transform: uppercase; letter-spacing: 0.5px;">El Instituto Juventud del Estado de México Presenta</h2>
+    <div class="institution-banner" style="margin-bottom: 0.5rem;">El Instituto Juventud del Estado de México Presenta</div>
     <h1 style="margin-top: 0.25rem;">El Camino de Mate-Go 🔵🏫</h1>
     <p>Supera las temporadas del álgebra y modela el universo exacto al estilo de los Jubits.</p>
   `;
@@ -1082,13 +1180,6 @@ function renderCodexGrid() {
 // ==========================================
 
 function startLessonFlow(lesson) {
-  if (state.userHearts <= 0) {
-    alert("❌ ¡No tienes corazones! Visita la Tiendita de Mochi para recargarlos.");
-    state.activeTab = 'store';
-    renderActiveView();
-    return;
-  }
-
   triggerSound('click');
   state.activeLesson = lesson;
   state.questionIndex = 0;
@@ -1115,7 +1206,7 @@ function populateQuestion() {
   const question = state.activeLesson.questions[state.questionIndex];
   const progressPercent = (state.questionIndex / state.activeLesson.questions.length) * 100;
   document.getElementById('lesson-progress-bar').style.width = progressPercent + '%';
-  document.getElementById('lesson-hearts-badge').innerText = state.userHearts;
+  document.getElementById('lesson-hearts-badge').innerText = '∞';
   document.getElementById('lesson-question-text').innerText = question.question;
 
   const displayMentor = document.getElementById('mentor-avatar-display');
@@ -1128,16 +1219,64 @@ function populateQuestion() {
   displayMentor.innerHTML = getJubitSVG(jColor);
   quoteDisplay.innerText = `💬 ¡Hola! Yo soy tu Jubit ${jColor === 'blue' ? 'Azul' : jColor === 'green' ? 'Verde' : 'Rojo'}. ¡Resolvamos este reto juntos!`;
 
+  // Reset feedback mascot
+  const feedbackMascot = document.getElementById('feedback-mascot');
+  if (feedbackMascot) {
+    feedbackMascot.style.display = 'none';
+    feedbackMascot.innerHTML = '';
+    feedbackMascot.className = 'feedback-mascot-avatar';
+  }
+
   const interactiveContainer = document.getElementById('question-interactive-container');
   interactiveContainer.innerHTML = '';
 
+  document.getElementById('btn-check-answer').innerText = 'Comprobar';
   document.getElementById('btn-check-answer').classList.remove('hidden');
   document.getElementById('btn-check-answer').disabled = true;
   document.getElementById('btn-next-question').classList.add('hidden');
   document.getElementById('feedback-slide-box').classList.add('hidden');
   document.getElementById('default-footer-instructions').classList.remove('hidden');
 
-  if (question.type === 'multiple-choice' || question.type === 'true-false') {
+  if (question.type === 'explanation') {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'explanation-container';
+    wrapper.style.display = 'flex';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '1.5rem';
+    wrapper.style.padding = '1rem';
+    wrapper.style.fontFamily = "'Fredoka', sans-serif";
+
+    const bubble = document.createElement('div');
+    bubble.className = 'question-bubble';
+    bubble.style.width = '100%';
+    bubble.style.background = 'var(--bg-card)';
+    bubble.style.border = '3px solid var(--text-primary)';
+    bubble.style.padding = '1.5rem';
+    bubble.style.boxShadow = '5px 5px 0px var(--text-primary)';
+    bubble.style.transform = 'none';
+    bubble.innerHTML = `
+      <h3 style="color: var(--accent-purple-hover); font-size: 1.35rem; margin: 0 0 0.75rem 0;">📚 Concepto Clave</h3>
+      <p style="font-size: 1.05rem; line-height: 1.6; color: var(--text-primary); margin: 0;">${question.text}</p>
+    `;
+
+    const mascotRow = document.createElement('div');
+    mascotRow.style.display = 'flex';
+    mascotRow.style.justifyContent = 'center';
+    mascotRow.style.width = '100%';
+    mascotRow.style.height = '100px';
+    mascotRow.innerHTML = getJubitSVG(jColor, 90);
+
+    wrapper.appendChild(bubble);
+    wrapper.appendChild(mascotRow);
+    interactiveContainer.appendChild(wrapper);
+
+    // Auto-enable continue/check button
+    const checkBtn = document.getElementById('btn-check-answer');
+    checkBtn.innerText = '¡Entendido! ➡️';
+    checkBtn.disabled = false;
+
+  } else if (question.type === 'multiple-choice' || question.type === 'true-false') {
     const grid = document.createElement('div');
     grid.className = `options-grid ${question.options.length === 2 ? 'two-cols' : ''}`;
 
@@ -1324,7 +1463,9 @@ function processCheckAnswer() {
   const question = state.activeLesson.questions[state.questionIndex];
   let correct = false;
 
-  if (question.type === 'multiple-choice' || question.type === 'true-false' || question.type === 'fill-in-the-blank') {
+  if (question.type === 'explanation') {
+    correct = true;
+  } else if (question.type === 'multiple-choice' || question.type === 'true-false' || question.type === 'fill-in-the-blank') {
     correct = state.selectedOption === question.answer;
   } else if (question.type === 'match') {
     correct = state.matchedPairs.length === question.pairs.length;
@@ -1340,6 +1481,7 @@ function processCheckAnswer() {
   const feedbackBox = document.getElementById('feedback-slide-box');
   const footerFeedback = document.getElementById('lesson-footer');
   const defaultFooterInstructions = document.getElementById('default-footer-instructions');
+  const feedbackMascot = document.getElementById('feedback-mascot');
 
   checkBtn.classList.add('hidden');
   nextBtn.classList.remove('hidden');
@@ -1350,7 +1492,21 @@ function processCheckAnswer() {
   if (state.activeLesson.id.includes('m2')) jColor = 'green';
   else if (state.activeLesson.id.includes('m3')) jColor = 'red';
 
-  if (correct) {
+  // Render Duolingo Cheering Mascot Animation
+  if (feedbackMascot) {
+    feedbackMascot.innerHTML = getJubitSVG(jColor, 75);
+    feedbackMascot.style.display = 'block';
+    feedbackMascot.className = 'feedback-mascot-avatar ' + (correct ? 'correct-dance' : 'incorrect-sigh');
+  }
+
+  if (question.type === 'explanation') {
+    triggerSound('correct');
+    quoteDisplay.innerText = "💬 ¡Perfecto! Ya conocemos el concepto clave. ¡Siga el camino, aprendiz!";
+    footerFeedback.className = 'lesson-footer correct';
+    document.getElementById('feedback-icon-box').innerText = '💡';
+    document.getElementById('feedback-title-box').innerText = '¡Concepto Aprendido!';
+    document.getElementById('feedback-desc-box').innerText = '¡Fantástico! Continuemos para poner a prueba nuestro conocimiento.';
+  } else if (correct) {
     triggerSound('correct');
     displayMentor.innerHTML = getJubitSVG(jColor);
     
@@ -1383,7 +1539,7 @@ function processCheckAnswer() {
     document.getElementById('feedback-title-box').innerText = '¡Uy, casi casi!';
     document.getElementById('feedback-desc-box').innerText = question.explanation;
 
-    state.userHearts = Math.max(0, state.userHearts - 1);
+    // state.userHearts = Math.max(0, state.userHearts - 1); // Desactivado para versión ilimitada
     state.wrongAnswersCount++;
     saveState();
     updateGlobalStats();
@@ -1395,16 +1551,6 @@ function processCheckAnswer() {
 }
 
 function processNextQuestion() {
-  if (state.userHearts <= 0) {
-    triggerSound('incorrect');
-    alert("💔 ¡Has perdido todos tus corazones! Regresa a la Tiendita de Mochi para recargarlos.");
-    lessonOverlay.classList.add('hidden');
-    document.body.classList.remove('lesson-active');
-    state.activeTab = 'store';
-    renderActiveView();
-    return;
-  }
-
   const nextIndex = state.questionIndex + 1;
   if (nextIndex < state.activeLesson.questions.length) {
     state.questionIndex = nextIndex;
