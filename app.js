@@ -469,7 +469,9 @@ function getJubitSVG(color, size = 60) {
       <g transform="translate(72, 60)">
         <rect x="0" y="0" width="18" height="24" rx="2" fill="#9e2a2b" stroke="#333" stroke-width="2"/>
         <line x1="4" y1="4" x2="14" y2="4" stroke="white" stroke-width="2" />
-        <text x="4" y="16" font-size="9" font-family="monospace" fill="white" font-weight="bold">JB</text>
+        <line x1="4" y1="9" x2="14" y2="9" stroke="white" stroke-width="1.5" />
+        <line x1="4" y1="14" x2="12" y2="14" stroke="white" stroke-width="1.5" />
+        <line x1="4" y1="19" x2="10" y2="19" stroke="white" stroke-width="1.5" />
       </g>
     `;
   } else if (c === 'red' || c === 'rojo') {
@@ -569,8 +571,6 @@ function getJubitSVG(color, size = 60) {
       </g>
       <circle cx="50" cy="55" r="38" fill="${bodyColor}" stroke="#333" stroke-width="3" />
       <path d="M 20,35 A 32,32 0 0,1 80,35" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.25" />
-      <rect x="30" y="58" width="40" height="20" rx="10" fill="white" stroke="#333" stroke-width="2" opacity="0.95" />
-      <text x="50" y="73" font-family="'Outfit', 'Fredoka', sans-serif" font-weight="900" font-size="14" fill="#111" text-anchor="middle" letter-spacing="1">JB</text>
       ${eyesMarkup}
       ${mouthMarkup}
       ${specialDecoration}
@@ -607,7 +607,7 @@ const state = {
   isCorrect: false,
   lessonFinished: false,
   wrongAnswersCount: 0,
-  mentorText: "¡Hola! Te doy la bienvenida a Jubit-Maths. ¡Vamos a divertirnos resolviendo problemas! 🌸✨"
+  mentorText: "¡Hola! Te doy la bienvenida a Mate-Go. ¡Vamos a divertirnos resolviendo problemas! 🌸✨"
 };
 
 function saveState() {
@@ -785,7 +785,7 @@ function renderDashboardMap() {
   const header = document.createElement('div');
   header.className = 'path-header';
   header.innerHTML = `
-    <h1>El Camino de Jubit-Maths 🔵🏫</h1>
+    <h1>El Camino de Mate-Go 🔵🏫</h1>
     <p>Supera las temporadas del álgebra y modela el universo exacto al estilo de los Jubits.</p>
   `;
   container.appendChild(header);
