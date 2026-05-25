@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiverso del Aprendizaje: Filosofía & Matemáticas IV</title>
+  <meta name="description" content="Aprende y practica Filosofía y Matemáticas IV de forma divertida con lecciones interactivas, gamificación, calculadora de fórmulas y graficador de parábolas." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Import Outfit and Inter fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ================= 1. PORTAL DE UNIVERSOS ================= -->
+  <div id="portal-screen" class="portal-container">
+    <div style="text-align: center; margin-top: 2rem; margin-bottom: 4rem;">
+      <h1 class="portal-title">Portal Multiverso de Aprendizaje</h1>
+      <p class="portal-subtitle">Selecciona tu camino y domina las ciencias y saberes más significativos del bachillerato.</p>
+    </div>
+
+    <!-- Grid of universe choices -->
+    <div class="portal-cards-grid">
+      <!-- Philosophy Universe Card -->
+      <div class="portal-card philo-card">
+        <span class="portal-card-emoji">🦉</span>
+        <h2>Ágora de Filosofía</h2>
+        <p>Desde Tales de Mileto hasta el existencialismo contemporáneo. Ejercita tu pensamiento crítico con retos intelectuales interactivos.</p>
+        <div class="portal-card-badges">
+          <span class="badge-tag purple-tag">Presocráticos</span>
+          <span class="badge-tag purple-tag">Metafísica</span>
+          <span class="badge-tag purple-tag">Existencialismo</span>
+        </div>
+        <button id="btn-enter-philo" class="btn-primary btn-portal-philo">Entrar al Ágora</button>
+      </div>
+
+      <!-- Mathematics Universe Card -->
+      <div class="portal-card math-card">
+        <span class="portal-card-emoji">📐</span>
+        <h2>Mateflix: Matemáticas IV</h2>
+        <p>El programa oficial de la UNAM estructurado en lecciones amenas basadas en tu guía oficial. ¡Domina desde álgebra hasta inecuaciones!</p>
+        <div class="portal-card-badges">
+          <span class="badge-tag red-tag">Estadística</span>
+          <span class="badge-tag red-tag">Álgebra y Cramer</span>
+          <span class="badge-tag red-tag">Fórmulas y Sandbox</span>
+        </div>
+        <button id="btn-enter-math" class="btn-primary btn-portal-math">Iniciar Temporada</button>
+      </div>
+    </div>
+
+    <!-- Global Stats Overview -->
+    <div class="portal-stats-footer">
+      <div class="portal-stat-item">
+        <span class="portal-stat-icon" style="color: var(--color-correct);">🏆</span>
+        <span><strong id="portal-xp">0</strong> XP Acumulada</span>
+      </div>
+      <div class="portal-stat-item">
+        <span class="portal-stat-icon" style="color: #3b82f6;">💎</span>
+        <span><strong id="portal-gems">100</strong> Sabiduría</span>
+      </div>
+      <div class="portal-stat-item">
+        <span class="portal-stat-icon" style="color: var(--accent-gold);">🔥</span>
+        <span><strong id="portal-streak">1</strong> días de Racha</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 2. CONTENEDOR PRINCIPAL DE APLICACIÓN ================= -->
+  <div id="app-screen" class="app-container hidden">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo-container">
+        <span id="logo-icon" class="logo-owl">🦉</span>
+        <h1 id="logo-title" class="logo-text">PhiloLingo</h1>
+      </div>
+
+      <nav class="nav-links">
+        <button id="nav-btn-universe" class="nav-item nav-btn-back">
+          <span class="icon-span">⬅️</span>
+          <span>Cambiar Universo</span>
+        </button>
+
+        <button id="nav-btn-dashboard" class="nav-item active">
+          <span class="icon-span">🗺️</span>
+          <span id="tab-label-dashboard">Camino del Logos</span>
+        </button>
+
+        <button id="nav-btn-sandbox" class="nav-item hidden">
+          <span class="icon-span">🧮</span>
+          <span>Laboratorio</span>
+        </button>
+
+        <button id="nav-btn-codex" class="nav-item">
+          <span class="icon-span">📖</span>
+          <span id="tab-label-codex">Códice de Sabios</span>
+        </button>
+
+        <button id="nav-btn-store" class="nav-item">
+          <span class="icon-span">👜</span>
+          <span>Ágora (Tienda)</span>
+        </button>
+      </nav>
+
+      <!-- Music toggle switches -->
+      <div class="sound-toggle-bar">
+        <span class="sound-toggle-icon">🎵</span>
+        <span class="sound-toggle-label">Música</span>
+        <label class="switch">
+          <input type="checkbox" id="music-checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-preview">
+          <div id="user-avatar" class="user-avatar-circle">B</div>
+          <div class="user-info">
+            <span class="user-name">Buscador</span>
+            <span id="user-title" class="user-title">Iniciado del Logos</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN PANEL -->
+    <main class="main-content">
+      <!-- TOP STATUS NAVBAR -->
+      <header class="top-navbar">
+        <div class="stat-badge streak" title="Racha de días de estudio">
+          <span class="stat-icon-animate">🔥</span>
+          <span id="stat-streak">1 días</span>
+        </div>
+
+        <div class="stat-badge hearts" title="Vidas/Corazones restantes">
+          <span>❤️</span>
+          <span id="stat-hearts">5 / 5</span>
+        </div>
+
+        <div class="stat-badge gems" title="Gemas acumuladas">
+          <span>💎</span>
+          <span id="stat-gems">100 💎</span>
+        </div>
+
+        <div class="stat-badge xp" title="Puntos de Experiencia (XP)">
+          <span>🏆</span>
+          <span id="stat-xp">0 XP</span>
+        </div>
+      </header>
+
+      <!-- 2.1 VIEW: DASHBOARD (MAPA DE SENDEROS) -->
+      <section id="view-dashboard" class="tab-view active">
+        <div class="path-container" id="path-map-container">
+          <!-- Dynamic Dashboard loaded by app.js -->
+        </div>
+      </section>
+
+      <!-- 2.2 VIEW: FORMULA LABORATORY (MATH EXCLUSIVE) -->
+      <section id="view-sandbox" class="tab-view hidden">
+        <div class="sandbox-panel">
+          <div style="text-align: center; margin-bottom: 2.5rem;">
+            <h1 class="sandbox-title">📐 El Laboratorio de Fórmulas</h1>
+            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-top: 0.5rem;">Un espacio interactivo para experimentar, resolver y visualizar tus guías de Matemáticas IV paso a paso.</p>
+          </div>
+
+          <!-- Sub Tabs Selector -->
+          <div class="sandbox-subtabs-row">
+            <button id="subtab-btn-stats" class="subtab-btn active">📊 Tendencia Central</button>
+            <button id="subtab-btn-quad" class="subtab-btn">📈 Fórmula General</button>
+            <button id="subtab-btn-cramer" class="subtab-btn">🔗 Cramer 2x2</button>
+          </div>
+
+          <!-- SUB-TAB CONTENT 1: STATS -->
+          <div id="subtab-content-stats" class="subtab-content active">
+            <h2 class="subtab-header">📊 Medidas de Tendencia Central</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Ingresa un conjunto de números separados por comas para calcular la media, la mediana y la moda con desgloses.</p>
+            
+            <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+              <input type="text" id="stats-input" class="option-btn text-left-input" value="8.5, 9.0, 7.5, 8.0, 9.5" placeholder="Ej. 8.5, 9.0, 7.5, 8.0, 9.5" />
+              <button id="stats-calc-btn" class="btn-primary" style="background: var(--color-correct); box-shadow: 3px 3px 0 var(--color-correct); border: none; padding: 0.75rem 2rem;">Calcular</button>
+            </div>
+
+            <div id="stats-results-box" class="results-box hidden">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- SUB-TAB CONTENT 2: QUADRATIC -->
+          <div id="subtab-content-quad" class="subtab-content hidden">
+            <h2 class="subtab-header">📈 Fórmula General Cuadrática</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Resuelve ecuaciones cuadráticas de la forma ax² + bx + c = 0 y observa su parábola en tiempo real.</p>
+            
+            <div class="quadratic-inputs-row">
+              <div class="coef-input-wrapper">
+                <label>a (x²)</label>
+                <input type="number" id="quad-a" class="option-btn center-text-input" value="2" />
+              </div>
+              <span class="math-operator">+</span>
+              <div class="coef-input-wrapper">
+                <label>b (x)</label>
+                <input type="number" id="quad-b" class="option-btn center-text-input" value="-7" />
+              </div>
+              <span class="math-operator">+</span>
+              <div class="coef-input-wrapper">
+                <label>c (constante)</label>
+                <input type="number" id="quad-c" class="option-btn center-text-input" value="3" />
+              </div>
+              <button id="quad-calc-btn" class="btn-primary" style="background: var(--color-correct); border: none; margin-top: 1.2rem; height: 50px;">Resolver</button>
+            </div>
+
+            <div id="quad-results-box" class="results-box hidden">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+
+          <!-- SUB-TAB CONTENT 3: CRAMER -->
+          <div id="subtab-content-cramer" class="subtab-content hidden">
+            <h2 class="subtab-header">🔗 Sistemas de Ecuaciones 2x2 (Cramer)</h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Resuelve sistemas de dos ecuaciones lineales con dos incógnitas por el método de determinantes ilustrado.</p>
+
+            <div class="cramer-container-form">
+              <div class="cramer-row">
+                <span class="cramer-eq-label">Ecuación 1:</span>
+                <input type="number" id="cramer-a1" class="option-btn inline-cramer-input" value="2" />
+                <span>x</span>
+                <span>+</span>
+                <input type="number" id="cramer-b1" class="option-btn inline-cramer-input" value="3" />
+                <span>y</span>
+                <span>=</span>
+                <input type="number" id="cramer-c1" class="option-btn inline-cramer-input" value="8" />
+              </div>
+
+              <div class="cramer-row">
+                <span class="cramer-eq-label">Ecuación 2:</span>
+                <input type="number" id="cramer-a2" class="option-btn inline-cramer-input" value="3" />
+                <span>x</span>
+                <span>+</span>
+                <input type="number" id="cramer-b2" class="option-btn inline-cramer-input" value="-1" />
+                <span>y</span>
+                <span>=</span>
+                <input type="number" id="cramer-c2" class="option-btn inline-cramer-input" value="1" />
+              </div>
+
+              <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                <button id="cramer-calc-btn" class="btn-primary" style="background: var(--color-correct); border: none;">Resolver Sistema</button>
+              </div>
+            </div>
+
+            <div id="cramer-results-box" class="results-box hidden">
+              <!-- Rendered by app.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2.3 VIEW: CODEX LIBRARY -->
+      <section id="view-codex" class="tab-view hidden">
+        <div class="codex-container">
+          <div class="codex-header">
+            <h1 id="codex-title">El Códice de los Sabios</h1>
+            <p id="codex-subtitle">Desbloquea los grandes pensadores completando sus lecciones. ¡Haz clic para ver sus biografías!</p>
+          </div>
+          <div class="codex-grid" id="codex-cards-grid-container">
+            <!-- Dynamic Codex Cards loaded by app.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 2.4 VIEW: AGORA STORE -->
+      <section id="view-store" class="tab-view hidden">
+        <div class="store-container">
+          <div class="store-header">
+            <h1>El Ágora de Atenas y Fórmulas</h1>
+            <p>Intercambia tus Gemas de Sabiduría acumuladas por elixires de vidas, escudos protectores y temas especiales</p>
+          </div>
+
+          <div class="store-grid">
+            <!-- Product 1: Heart Refill -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: var(--color-incorrect);">❤️</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Elixir de Corazones</h3>
+                  <p class="store-item-desc">Restaura todas tus vidas para seguir practicando sin interrupciones en el camino del saber.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">50 💎</span>
+                  <button id="store-buy-hearts" class="btn-store-buy">Comprar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 2: Streak Shield -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: var(--accent-gold);">🛡️</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Escudo de Racha</h3>
+                  <p class="store-item-desc">Protege tu valiosa racha diaria. Evita perder tus días acumulados si no entras a estudiar por un día.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">75 💎</span>
+                  <button id="store-buy-shield" class="btn-store-buy">Comprar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 3: Athena theme -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: #4f46e5;">🏛️</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Tema Atenas Clásica</h3>
+                  <p class="store-item-desc">Cambia el aspecto del aula por un mármol mediterráneo claro con matices de azul y oro clásico.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">Gratis</span>
+                  <button class="btn-store-buy btn-theme-trigger" data-theme="athena-classic">Activar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 4: Deep Cosmos theme -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: var(--accent-purple);">🌌</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Tema Cosmos Oscuro</h3>
+                  <p class="store-item-desc">Vuelve al ambiente original nocturno con violeta eléctrico y carbón sideral para una profunda concentración.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">Gratis</span>
+                  <button class="btn-store-buy btn-theme-trigger" data-theme="dark-deep">Activar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 5: Chalkboard Theme -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: #2b9348;">📝</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Tema Pizarra de Tiza</h3>
+                  <p class="store-item-desc">Un ambiente de salón escolar clásico con fondo verde oscuro, líneas finas y tiza blanca.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">Gratis</span>
+                  <button class="btn-store-buy btn-theme-trigger" data-theme="chalkboard-math">Activar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 6: Cyberpunk Theme -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: #06b6d4;">⚡</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Tema Cyberpunk Teorema</h3>
+                  <p class="store-item-desc">Diseño futurista de neón cian, violeta y resplandor digital para alta concentración intelectual.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">Gratis</span>
+                  <button class="btn-store-buy btn-theme-trigger" data-theme="cyberpunk-math">Activar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product 7: Mateflix Theme -->
+            <div class="store-card">
+              <span class="store-card-icon" style="color: #e50914;">🎬</span>
+              <div class="store-card-details">
+                <div>
+                  <h3 class="store-item-name">Tema Mateflix Carmesí</h3>
+                  <p class="store-item-desc">Inspirado en interfaces cinematográficas, con negro carbón y un impactante rojo carmesí.</p>
+                </div>
+                <div class="store-buy-row">
+                  <span class="store-item-cost">Gratis</span>
+                  <button class="btn-store-buy btn-theme-trigger" data-theme="mateflix-crimson">Activar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ================= 3. ACTIVE LESSON OVERLAY VIEW ================= -->
+  <div id="lesson-overlay" class="lesson-page hidden">
+    <header class="lesson-header">
+      <button id="lesson-close-btn" class="close-btn">❌</button>
+      
+      <div class="progress-bar-container">
+        <div id="lesson-progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+      </div>
+
+      <div class="stat-badge hearts">
+        <span>❤️</span>
+        <span id="lesson-hearts-badge">5</span>
+      </div>
+    </header>
+
+    <!-- LESSON PANEL INTERACTIVES -->
+    <div class="lesson-body">
+      <div id="lesson-question-zone" class="question-card">
+        
+        <!-- Mentor Dialog Bubble -->
+        <div class="question-bubble-container">
+          <div id="mentor-avatar-display" class="mentor-avatar">🦉</div>
+          <div class="question-bubble">
+            <p id="lesson-question-text" class="question-title">¿Cargando pregunta?</p>
+            <span id="lesson-mentor-quote" style="font-size: 0.8rem; color: var(--accent-gold); margin-top: 0.35rem; display: block; font-style: italic;">💬 Cargando consejo...</span>
+          </div>
+        </div>
+
+        <!-- Rendered active question module containers -->
+        <div id="question-interactive-container">
+          <!-- Populated dynamically by app.js (Option Grids, Fill-in, Match, sorting...) -->
+        </div>
+
+      </div>
+
+      <!-- LESSON COMPLETED CONGRATS BOX -->
+      <div id="lesson-completion-zone" class="completion-container hidden">
+        <span id="completion-emoji-display" class="completion-owl">🦉🎓</span>
+        <h1 class="completion-title">¡Lección Finalizada!</h1>
+        <p id="completion-message-display" class="completion-subtitle">El Logos se fortalece con tu templanza. ¡Gran lección de sabiduría!</p>
+
+        <div class="completion-stats">
+          <div class="comp-stat-card">
+            <span id="completion-xp-award" class="comp-stat-value" style="color: var(--color-correct);">+20</span>
+            <span class="comp-stat-label">XP Recibida</span>
+          </div>
+
+          <div class="comp-stat-card">
+            <span id="completion-gems-award" class="comp-stat-value" style="color: var(--accent-gold);">+10 💎</span>
+            <span class="comp-stat-label">Gemas Extra</span>
+          </div>
+        </div>
+
+        <button id="btn-conclude-lesson" class="btn-primary" style="width: 100%;">Continuar al Sendero</button>
+      </div>
+    </div>
+
+    <!-- DYNAMIC FEEDBACK FOOTER PANEL -->
+    <footer id="lesson-footer" class="lesson-footer">
+      <div class="lesson-footer-content">
+        <div id="feedback-slide-box" class="feedback-slide hidden">
+          <div id="feedback-icon-box" class="feedback-icon">✔️</div>
+          <div class="feedback-details">
+            <h4 id="feedback-title-box">¡Excelente Trabajo!</h4>
+            <p id="feedback-desc-box">La sabiduría del Logos corre por tus venas.</p>
+          </div>
+        </div>
+        <span id="default-footer-instructions" style="color: var(--text-muted); font-size: 0.9rem;">
+          Selecciona una respuesta para continuar tu indagación.
+        </span>
+
+        <button id="btn-check-answer" class="btn-primary" disabled>Comprobar</button>
+        <button id="btn-next-question" class="btn-primary btn-correct hidden">Continuar ➡️</button>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
