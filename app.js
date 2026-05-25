@@ -2044,6 +2044,21 @@ function setupEventListeners() {
     });
   }
 
+  const dropdownCreditsBtn = document.getElementById('dropdown-credits-btn');
+  if (dropdownCreditsBtn && creditsModal) {
+    dropdownCreditsBtn.addEventListener('click', () => {
+      triggerSound('click');
+      if (mobileNavDropdown) {
+        mobileNavDropdown.classList.add('hidden');
+      }
+      if (creditsJubitAvatar) {
+        creditsJubitAvatar.innerHTML = getJubitSVG('blue', 120);
+      }
+      creditsModal.classList.remove('hidden');
+    });
+  }
+
+
   // === Credits Modal listeners ===
   const btnCreditsTrigger = document.getElementById('btn-credits-trigger');
   const creditsModal = document.getElementById('credits-modal');
