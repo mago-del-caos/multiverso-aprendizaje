@@ -1,164 +1,18 @@
 // =========================================================================
-// MULTIVERSE LEARNING PORTAL: PHILOSOPHY & MATHEMATICS IV
+// MATE-GO 🐱🌸: MATEMÁTICAS IV ADORABLES Y DIVERTIDAS
 // Core Javascript Engine (NATIVE ZERO DEPENDENCY SINGLE-PAGE APPLICATION)
 // =========================================================================
 
 // ==========================================
-// 1. DATA LAYER (Syllabus, Exercises & Codex)
+// 1. DATA LAYER (Kawaii Syllabus & Codex)
 // ==========================================
-
-const lessonsData = [
-  {
-    id: 1,
-    title: "El Despertar del Logos",
-    subtitle: "Módulo 1",
-    description: "Explora la transición del mito a la razón, el origen de todas las cosas (Arché) y la sabiduría radical de Sócrates.",
-    badge: "🏛️",
-    difficulty: "Iniciado",
-    lessons: [
-      {
-        id: "l1_1",
-        name: "El Origen del Cosmos",
-        xpAward: 15,
-        questions: [
-          {
-            id: "q1_1_1",
-            type: "multiple-choice",
-            question: "¿Cuál es el concepto griego que define el principio u origen de todas las cosas en el universo?",
-            options: ["Logos", "Arché", "Ápeiron", "Physis"],
-            answer: "Arché",
-            explanation: "El 'Arché' (o Arjé) representa el elemento original o primer principio constitutivo de la realidad para los filósofos presocráticos."
-          },
-          {
-            id: "q1_1_2",
-            type: "multiple-choice",
-            question: "Tales de Mileto, considerado el primer filósofo de la historia, propuso que el Arché era:",
-            options: ["El aire", "El fuego", "El agua", "Los átomos"],
-            answer: "El agua",
-            explanation: "Tales observó que el agua es fundamental para la vida, la humedad está presente en todas las cosas y el agua puede cambiar de estado físico."
-          },
-          {
-            id: "q1_1_3",
-            type: "match",
-            question: "Empareja a cada filósofo presocrático con su propuesta de Arché (primer principio):",
-            pairs: [
-              { left: "Tales de Mileto", right: "El Agua" },
-              { left: "Anaxímenes", right: "El Aire" },
-              { left: "Heráclito", right: "El Fuego (Cambio)" },
-              { left: "Demócrito", right: "Los Átomos" }
-            ]
-          },
-          {
-            id: "q1_1_4",
-            type: "fill-in-the-blank",
-            question: "Completa el fragmento célebre de Heráclito sobre el fluir constante de la realidad:",
-            text: "No podemos bañarnos dos veces en el mismo ________.",
-            options: ["río", "mar", "fuego", "tiempo"],
-            answer: "río",
-            explanation: "Para Heráclito, todo cambia constantemente ('Panta rei'). El río representa este flujo eterno: sus aguas ya no son las mismas, ni nosotros tampoco."
-          },
-          {
-            id: "q1_1_5",
-            type: "true-false",
-            question: "Parménides sostenía que el movimiento y el cambio son ilusiones de nuestros sentidos, y que el 'Ser' es único, eterno e inmóvil.",
-            options: ["Verdadero", "Falso"],
-            answer: "Verdadero",
-            explanation: "Frente al continuo devenir de Heráclito, Parménides argumentaba que 'el Ser es y el no-Ser no es'; el verdadero ser es inmutable."
-          }
-        ]
-      },
-      {
-        id: "l1_2",
-        name: "Sócrates y el Método",
-        xpAward: 20,
-        questions: [
-          {
-            id: "q1_2_1",
-            type: "sentence-builder",
-            question: "Ordena los elementos para construir la frase más famosa atribuida a Sócrates:",
-            words: ["sé", "nada", "que", "Solo", "no"],
-            correctOrder: ["Solo", "sé", "que", "no", "sé", "nada"],
-            explanation: "Esta declaración representa la 'docta ignorancia' socrática: el reconocimiento de las propias limitaciones como el primer paso hacia el verdadero saber."
-          },
-          {
-            id: "q1_2_2",
-            type: "multiple-choice",
-            question: "¿Cómo llamaba Sócrates a su método de indagación basado en hacer preguntas para que el interlocutor dé a luz a sus propias ideas?",
-            options: ["Escolástica", "Retórica", "Mayéutica", "Dialéctica"],
-            answer: "Mayéutica",
-            explanation: "Sócrates consideraba que su labor no era enseñar, sino ayudar a dar a luz al conocimiento que ya habita en el alma socrática."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "El Mundo del Pensamiento",
-    subtitle: "Módulo 2",
-    description: "Adéntrate en el idealismo metafísico de Platón y el realismo empirista de Aristóteles, las dos columnas de Occidente.",
-    badge: "🦉",
-    difficulty: "Intermedio",
-    lessons: [
-      {
-        id: "l2_1",
-        name: "Platón y las Sombras",
-        xpAward: 20,
-        questions: [
-          {
-            id: "q2_1_1",
-            type: "multiple-choice",
-            question: "En la filosofía platónica, ¿dónde se encuentra la verdad absoluta, inmutable y perfecta de las cosas?",
-            options: ["En el Mundo Sensible", "En el Mundo de las Ideas", "En la Tierra", "En el Olimpo"],
-            answer: "En el Mundo de las Ideas",
-            explanation: "Para Platón, las cosas físicas son solo sombras o copias imperfectas de las Formas o Ideas perfectas y eternas del Mundo Inteligible."
-          },
-          {
-            id: "q2_1_2",
-            type: "fill-in-the-blank",
-            question: "En el famoso mito de Platón, los prisioneros confunden las ________ proyectadas en la pared con la auténtica realidad.",
-            text: "sombras",
-            options: ["sombras", "luces", "figuras", "visiones"],
-            answer: "sombras",
-            explanation: "En la Alegoría de la Caverna, las sombras representan el nivel más bajo de conocimiento basado solo en percepciones sensibles."
-          }
-        ]
-      }
-    ]
-  }
-];
-
-const codexData = [
-  {
-    id: "socrates",
-    name: "Sócrates",
-    period: "Grecia Clásica (470 – 399 a.C.)",
-    concept: "La Mayéutica & Docta Ignorancia",
-    avatar: "🏛️",
-    moduleRequired: 1,
-    quote: "Solo sé que no sé nada.",
-    bio: "El tábano de Atenas. Sócrates transformó la filosofía al enfocarla en la ética y la conducta humana. No dejó nada escrito; prefería caminar descalzo por el ágora incitando a cuestionar certezas.",
-    curiosity: "Fue condenado a muerte acusado de introducir nuevos dioses y beber cicuta."
-  },
-  {
-    id: "platon",
-    name: "Platón",
-    period: "Grecia Clásica (427 – 347 a.C.)",
-    concept: "El Mundo de las Ideas",
-    avatar: "🦉",
-    moduleRequired: 2,
-    quote: "La dirección de la educación determinará su vida futura.",
-    bio: "Discípulo estelar de Sócrates. Fundó la Academia de Atenas. Formuló el idealismo metafísico al separar el mundo sensible del inteligible.",
-    curiosity: "Su nombre real era Aristocles; Platón significa el de anchas espaldas."
-  }
-];
 
 const mathLessonsData = [
   {
     id: 1,
-    title: "Los Números Reales",
+    title: "Pastel de Números",
     subtitle: "Temporada 1",
-    description: "Estudia las medidas estadísticas de tendencia central, simplifica con leyes de exponentes y domina la notación científica.",
+    description: "Estudia las medidas estadísticas de tendencia central, simplifica con leyes de exponentes y domina la notación científica de forma adorable.",
     badge: "🔢",
     difficulty: "Iniciado",
     lessons: [
@@ -173,7 +27,7 @@ const mathLessonsData = [
             question: "Ana obtuvo las siguientes calificaciones en 5 exámenes de matemáticas: 8.5, 9.0, 7.5, 8.0 y 9.5. ¿Cuál es su promedio (media aritmética)?",
             options: ["8.0", "8.5", "8.7", "9.0"],
             answer: "8.5",
-            explanation: "Para calcular el promedio, sumamos todas las calificaciones: 8.5 + 9.0 + 7.5 + 8.0 + 9.5 = 42.5. Luego dividimos por el número de exámenes: 42.5 / 5 = 8.5."
+            explanation: "Sumamos todas las calificaciones: 8.5 + 9.0 + 7.5 + 8.0 + 9.5 = 42.5. Luego dividimos por el número de exámenes: 42.5 / 5 = 8.5, ¡nya! 🌸"
           },
           {
             id: "qm1_1_2",
@@ -181,7 +35,7 @@ const mathLessonsData = [
             question: "Los libros leídos por 7 estudiantes fueron: 3, 1, 4, 2, 5, 1, 6. ¿Cuál es la mediana de libros leídos?",
             options: ["2", "3", "4", "1"],
             answer: "3",
-            explanation: "Primero ordenamos los datos de menor a mayor: 1, 1, 2, 3, 4, 5, 6. Como hay 7 datos (número impar), la mediana es el dato central, el número 3."
+            explanation: "Ordenamos los datos: 1, 1, 2, 3, 4, 5, 6. Como hay 7 datos (impar), la mediana es el dato del centro: el número 3. 🍡"
           },
           {
             id: "qm1_1_3",
@@ -189,7 +43,15 @@ const mathLessonsData = [
             question: "En una encuesta sobre el medio de transporte de 15 alumnos, se obtuvo: Metro (7 veces), Camión (4), Bicicleta (2) y Auto (2). ¿Cuál es la moda?",
             options: ["Metro", "Camión", "Bicicleta", "Auto"],
             answer: "Metro",
-            explanation: "La moda es el dato con mayor frecuencia absoluta (el que más se repite). En este caso, el Metro se repite 7 veces."
+            explanation: "La moda es el dato que más se repite. En este caso, el Metro se repite 7 veces, ¡es el más popular! 🐱"
+          },
+          {
+            id: "qm1_1_4",
+            type: "true-false",
+            question: "Si a un grupo de gastos ($30, $30, $30, $45, $50, $60, $75) con media de $45.7 se le agrega un estudiante que gastó $100, la nueva media aritmética aumenta a $52.5.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "La suma sube a $420 y el total de datos a 8. Calculamos 420 / 8 = $52.5. ¡La media subió por el valor extremo! 🎀"
           }
         ]
       },
@@ -204,7 +66,7 @@ const mathLessonsData = [
             question: "Aplica las leyes de exponentes para simplificar: a^(-9)",
             options: ["-9a", "1 / a^9", "a^9", "-a^9"],
             answer: "1 / a^9",
-            explanation: "La ley del exponente negativo establece que x^(-n) = 1 / x^n para cualquier base x diferente de cero."
+            explanation: "La ley del exponente negativo establece que x^(-n) = 1 / x^n. ¡Super sencillo, nya! ✨"
           },
           {
             id: "qm1_2_2",
@@ -212,7 +74,38 @@ const mathLessonsData = [
             question: "Resuelve y simplifica aplicando las leyes de exponentes: (y^2)^4",
             options: ["y^6", "y^8", "2y^4", "y^16"],
             answer: "y^8",
-            explanation: "La ley de potencia de una potencia establece que (x^m)^n = x^(m*n). Multiplicamos los exponentes: 2 * 4 = 8, obteniendo y^8."
+            explanation: "Multiplicamos los exponentes en potencia de potencia: 2 * 4 = 8, obteniendo y^8. 🍭"
+          },
+          {
+            id: "qm1_2_3",
+            type: "fill-in-the-blank",
+            question: "Simplifica la expresión multiplicando las bases iguales: (z^3)(z^2)",
+            options: ["z^6", "z^5", "5z", "z^1"],
+            answer: "z^5",
+            explanation: "Al multiplicar bases iguales, se conserva la base y se suman los exponentes: z^(3+2) = z^5. 🧸"
+          }
+        ]
+      },
+      {
+        id: "m1_3",
+        name: "Notación Científica",
+        xpAward: 25,
+        questions: [
+          {
+            id: "qm1_3_1",
+            type: "multiple-choice",
+            question: "Resuelve la multiplicación y expresa el resultado: (1.5 x 10^8) x 3",
+            options: ["4.5 x 10^8", "4.5 x 10^24", "1.5 x 10^24", "45 x 10^7"],
+            answer: "4.5 x 10^8",
+            explanation: "Multiplicamos los coeficientes decimales: 1.5 x 3 = 4.5. Conservamos la potencia de 10 intacta: 4.5 x 10^8. 🌸"
+          },
+          {
+            id: "qm1_3_2",
+            type: "true-false",
+            question: "El resultado de sumar 3.2 x 10^4 + 1.5 x 10^3 es igual a 3.35 x 10^4.",
+            options: ["Verdadero", "Falso"],
+            answer: "Verdadero",
+            explanation: "Convertimos 1.5 x 10^3 a 0.15 x 10^4 para poder sumar: (3.2 + 0.15) x 10^4 = 3.35 x 10^4. 🍡"
           }
         ]
       }
@@ -220,37 +113,71 @@ const mathLessonsData = [
   },
   {
     id: 2,
-    title: "Expresiones Algebraicas",
+    title: "Magia Algebraica",
     subtitle: "Temporada 2",
-    description: "Realiza sumas, restas y multiplicaciones polinomiales, resuelve productos notables y aplica métodos de factorización.",
-    badge: "📐",
+    description: "Realiza operaciones con expresiones polinomiales, resuelve productos notables y aplica métodos de factorización.",
+    badge: "🌸",
     difficulty: "Intermedio",
     lessons: [
       {
         id: "m2_1",
-        name: "Productos Notables y Factorización",
+        name: "Operaciones y Productos Notables",
         xpAward: 25,
         questions: [
           {
             id: "qm2_1_1",
             type: "multiple-choice",
-            question: "Desarrolla el binomio al cuadrado: (2x + 3y)^2",
-            options: ["4x^2 + 9y^2", "4x^2 + 12xy + 9y^2", "4x^2 + 6xy + 9y^2", "2x^2 + 12xy + 3y^2"],
-            answer: "4x^2 + 12xy + 9y^2",
-            explanation: "Fórmula: (a+b)² = a² + 2ab + b². Obtenemos (2x)² + 2(2x)(3y) + (3y)² = 4x² + 12xy + 9y²."
+            question: "Simplifica la siguiente suma algebraica: (4x^2 + 3xy - 5y^2) + (6xy - 7x^2 + 8y^2) + (-xy - x^2 - 2y^2)",
+            options: ["-4x^2 + 8xy + y^2", "-4x^2 + 9xy + y^2", "-3x^2 + 8xy - y^2", "x^2 + xy + y^2"],
+            answer: "-4x^2 + 8xy + y^2",
+            explanation: "Agrupamos semejantes: 4 - 7 - 1 = -4x^2; 3 + 6 - 1 = 8xy; -5 + 8 - 2 = 1y^2. ¡Listo, nya! 🐱"
           },
           {
             id: "qm2_1_2",
             type: "multiple-choice",
-            question: "Factoriza por término común: 14x^2y^2 - 28x^3y^4 + 56x^5y^3",
+            question: "Desarrolla el binomio al cuadrado: (2x + 3y)^2",
+            options: ["4x^2 + 9y^2", "4x^2 + 12xy + 9y^2", "4x^2 + 6xy + 9y^2", "2x^2 + 12xy + 3y^2"],
+            answer: "4x^2 + 12xy + 9y^2",
+            explanation: "Fórmula (a+b)² = a² + 2ab + b². Obtenemos (2x)² + 2(2x)(3y) + (3y)² = 4x² + 12xy + 9y². 🎀"
+          }
+        ]
+      },
+      {
+        id: "m2_2",
+        name: "El Arte de la Factorización",
+        xpAward: 30,
+        questions: [
+          {
+            id: "qm2_2_1",
+            type: "multiple-choice",
+            question: "Factoriza la expresión por término común: 14x^2 y^2 - 28x^3 y^4 + 56x^5 y^3",
             options: [
-              "14x^2y^2 (1 - 2xy^2 + 4x^3y)",
-              "7x^2y^2 (2 - 4xy^2 + 8x^3y)",
-              "14xy (x y - 2x^2y^3 + 4x^4y^2)",
-              "14x^2y^2 (1 + 2xy^2 - 4x^3y)"
+              "14x^2 y^2 (1 - 2xy^2 + 4x^3 y)",
+              "7x^2 y^2 (2 - 4xy^2 + 8x^3 y)",
+              "14xy (x y - 2x^2 y^3 + 4x^4 y^2)",
+              "14x^2 y^2 (1 + 2xy^2 - 4x^3 y)"
             ],
-            answer: "14x^2y^2 (1 - 2xy^2 + 4x^3y)",
-            explanation: "Extraemos el MCD numérico 14 y las potencias menores comunes x^2 y y^2."
+            answer: "14x^2 y^2 (1 - 2xy^2 + 4x^3 y)",
+            explanation: "Extraemos el MCD 14 y las menores potencias x^2 y y^2. 🍡"
+          },
+          {
+            id: "qm2_2_2",
+            type: "multiple-choice",
+            question: "Resuelve la diferencia de cuadrados perfectos: 4a^2 - b^4",
+            options: ["(2a - b^2)^2", "(2a - b^2)(2a + b^2)", "(2a - b)(2a + b)", "(4a - b^2)(a + b^2)"],
+            answer: "(2a - b^2)(2a + b^2)",
+            explanation: "La diferencia de cuadrados se factoriza en binomios conjugados: (2a - b^2)(2a + b^2), ¡nya! 🧸"
+          },
+          {
+            id: "qm2_2_3",
+            type: "match",
+            question: "Empareja cada trinomio con su factorización algebraica correspondiente:",
+            pairs: [
+              { left: "a^2 - 2ab + b^2", right: "(a - b)^2" },
+              { left: "49a^2 - 14a + 1", right: "(7a - 1)^2" },
+              { left: "a^2 - 11a + 28", right: "(a - 7)(a - 4)" },
+              { left: "x^2 - 5x - 36", right: "(x - 9)(x + 4)" }
+            ]
           }
         ]
       }
@@ -258,32 +185,40 @@ const mathLessonsData = [
   },
   {
     id: 3,
-    title: "Ecuaciones y Modelos",
+    title: "El Reino de las Ecuaciones",
     subtitle: "Temporada 3",
     description: "Aprende a resolver ecuaciones lineales, resolver problemas verbales de la vida real y dominar la fórmula general cuadrática.",
-    badge: "⚖️",
+    badge: "🎀",
     difficulty: "Intermedio",
     lessons: [
       {
         id: "m3_1",
-        name: "Ecuaciones y Problemas",
+        name: "Ecuaciones de 1° y 2° Grado",
         xpAward: 25,
         questions: [
           {
             id: "qm3_1_1",
             type: "multiple-choice",
-            question: "Si al doble de un número se le resta su mitad, resulta 54. ¿Cuál es ese número?",
-            options: ["24", "36", "48", "18"],
-            answer: "36",
-            explanation: "Ecuación: 2x - x/2 = 54 => 3x/2 = 54 => 3x = 108 => x = 36."
+            question: "Resuelve la ecuación de primer grado: 3(2x - 5) + 1 = -4x - (4 - 5x) + 5",
+            options: ["x = 1", "x = 3", "x = -2", "x = 5"],
+            answer: "x = 3",
+            explanation: "Desarrollamos: 6x - 14 = x + 1 => 5x = 15 => x = 3. ¡Súper fácil! 🍭"
           },
           {
             id: "qm3_1_2",
             type: "multiple-choice",
-            question: "Una granja tiene cerdos y gallinas. Hay un total de 35 cabezas y 116 patas. ¿Cuántos cerdos y gallinas hay?",
-            options: ["20 cerdos y 15 gallinas", "23 cerdos y 12 gallinas", "15 cerdos y 20 gallinas", "25 cerdos y 10 gallinas"],
-            answer: "23 cerdos y 12 gallinas",
-            explanation: "Resolviendo el sistema: c + g = 35 y 4c + 2g = 116. Restando obtenemos c = 23 y g = 12."
+            question: "Si al doble de un número se le resta su mitad, resulta 54. ¿Cuál es ese número?",
+            options: ["24", "36", "48", "18"],
+            answer: "36",
+            explanation: "Ecuación: 2x - x/2 = 54 => 1.5x = 54 => x = 36. ✨"
+          },
+          {
+            id: "qm3_1_3",
+            type: "multiple-choice",
+            question: "Resuelve empleando la fórmula general cuadrática: 2x^2 - 7x + 3 = 0",
+            options: ["x = 3, x = 0.5", "x = -3, x = -0.5", "x = 2, x = 1.5", "x = 1, x = 3"],
+            answer: "x = 3, x = 0.5",
+            explanation: "a=2, b=-7, c=3. Discriminante = 49 - 24 = 25. x = [7 ± 5] / 4 => x1 = 3, x2 = 0.5. 🌸"
           }
         ]
       }
@@ -301,7 +236,7 @@ const mathCodexData = [
     moduleRequired: 1,
     quote: "Los números gobiernan el universo.",
     bio: "Líder de la mística escuela pitagórica. Concibió al número como la esencia de todas las cosas y formuló su teorema sobre triángulos rectángulos.",
-    curiosity: "La secta prohibía estrictamente comer habas."
+    curiosity: "La secta prohibía estrictamente comer habas, ¡nya! 🐱"
   },
   {
     id: "euclides",
@@ -312,7 +247,7 @@ const mathCodexData = [
     moduleRequired: 2,
     quote: "No hay un camino real hacia la geometría.",
     bio: "El Padre de la Geometría. Estructuró todo el conocimiento geométrico a partir de sus Elementos con 5 postulados esenciales.",
-    curiosity: "Respondio a Ptolomeo que la geometría exige esfuerzo y dedicación."
+    curiosity: "Le gustaban mucho los trazos de colores pasteles."
   }
 ];
 
@@ -491,16 +426,14 @@ const playSound = {
 // ==========================================
 
 const state = {
-  activeUniverse: localStorage.getItem('active_universe') || 'portal',
   activeTab: 'dashboard',
   userXP: parseInt(localStorage.getItem('philo_xp'), 10) || 0,
   userGems: parseInt(localStorage.getItem('philo_gems'), 10) || 100,
   userHearts: parseInt(localStorage.getItem('philo_hearts'), 10) || 5,
   userStreak: parseInt(localStorage.getItem('philo_streak'), 10) || 1,
-  completedLessons: JSON.parse(localStorage.getItem('philo_completed_lessons')) || [],
   mathCompletedLessons: JSON.parse(localStorage.getItem('math_completed_lessons')) || [],
   hasStreakShield: localStorage.getItem('philo_shield') === 'true',
-  currentTheme: localStorage.getItem('philo_theme') || 'dark-deep',
+  currentTheme: localStorage.getItem('philo_theme') || 'mochi-pink',
   musicEnabled: false,
   effectsEnabled: true,
 
@@ -516,61 +449,42 @@ const state = {
   isCorrect: false,
   lessonFinished: false,
   wrongAnswersCount: 0,
-  mentorText: "¡Saludos, joven pensador! Busquemos hoy la sabiduría."
+  mentorText: "¡Hola, nya! ¡Te doy la bienvenida a Mate-go! 🌸✨"
 };
 
-// Synchronize all variables to localStorage
 function saveState() {
-  localStorage.setItem('active_universe', state.activeUniverse);
   localStorage.setItem('philo_xp', state.userXP);
   localStorage.setItem('philo_gems', state.userGems);
   localStorage.setItem('philo_hearts', state.userHearts);
   localStorage.setItem('philo_streak', state.userStreak);
-  localStorage.setItem('philo_completed_lessons', JSON.stringify(state.completedLessons));
   localStorage.setItem('math_completed_lessons', JSON.stringify(state.mathCompletedLessons));
   localStorage.setItem('philo_shield', state.hasStreakShield);
   localStorage.setItem('philo_theme', state.currentTheme);
 }
 
 // ==========================================
-// 4. UI RENDER ENGINE (PORTAL & APP SCREENS)
+// 4. UI RENDER ENGINE
 // ==========================================
 
-// Global DOM references
-const portalScreen = document.getElementById('portal-screen');
 const appScreen = document.getElementById('app-screen');
 const lessonOverlay = document.getElementById('lesson-overlay');
 
 function updateGlobalStats() {
-  // Sync text stats
-  document.getElementById('portal-xp').innerText = state.userXP;
-  document.getElementById('portal-gems').innerText = state.userGems;
-  document.getElementById('portal-streak').innerText = state.userStreak;
-
   document.getElementById('stat-xp').innerText = state.userXP + ' XP';
-  document.getElementById('stat-gems').innerText = state.userGems + ' 💎';
+  document.getElementById('stat-gems').innerText = state.userGems + ' 🍭';
   document.getElementById('stat-streak').innerText = state.userStreak + ' días';
   document.getElementById('stat-hearts').innerText = state.userHearts + ' / 5';
 
   // Apply user title
-  let title = "Iniciado del Logos";
-  if (state.activeUniverse === 'math') {
-    if (state.userXP < 50) title = "Cero Absoluto";
-    else if (state.userXP < 120) title = "Geómetras Aprendiz";
-    else if (state.userXP < 250) title = "Calculista de Álgebra";
-    else if (state.userXP < 450) title = "Científico de Ecuaciones";
-    else if (state.userXP < 700) title = "Maestro Pitagórico";
-    else title = "Arquitecto del Infinito 👑";
-  } else {
-    if (state.userXP < 50) title = "Iniciado del Logos";
-    else if (state.userXP < 120) title = "Discípulo del Ágora";
-    else if (state.userXP < 250) title = "Sofista Perspicaz";
-    else if (state.userXP < 450) title = "Pensador Ilustrado";
-    else if (state.userXP < 700) title = "Sabio de la Academia";
-    else title = "Rey Filósofo 👑";
-  }
+  let title = "Cero Absoluto 🎀";
+  if (state.userXP < 50) title = "Cero Absoluto 🎀";
+  else if (state.userXP < 120) title = "Geómetra Aprendiz 🐱";
+  else if (state.userXP < 250) title = "Calculista de Álgebra 🌸";
+  else if (state.userXP < 450) title = "Científico de Ecuaciones 🎀";
+  else if (state.userXP < 700) title = "Maestro Pitagórico 📐";
+  else title = "Arquitecto del Infinito 👑";
 
-  document.getElementById('user-avatar').innerText = title.charAt(0);
+  document.getElementById('user-avatar').innerText = '🐱';
   document.getElementById('user-title').innerText = title;
 }
 
@@ -582,125 +496,80 @@ function applyTheme(themeName) {
   body.className = ''; // Reset classes
   body.style = ''; // Reset styles
 
-  if (themeName === 'athena-classic') {
-    body.classList.add('theme-athena');
-    body.style.setProperty('--bg-primary', '#f4f4f7');
-    body.style.setProperty('--bg-secondary', '#ffffff');
-    body.style.setProperty('--bg-card', '#e8e8f0');
-    body.style.setProperty('--bg-glass', 'rgba(255, 255, 255, 0.85)');
-    body.style.setProperty('--border-glass', 'rgba(139, 92, 246, 0.15)');
-    body.style.setProperty('--text-primary', '#1e1b4b');
-    body.style.setProperty('--text-secondary', '#4f46e5');
-    body.style.setProperty('--text-muted', '#6b7280');
-    body.style.setProperty('--border-glass-light', 'rgba(0, 0, 0, 0.08)');
+  if (themeName === 'mint-icecream') {
+    body.classList.add('theme-mint-icecream');
+    body.style.setProperty('--bg-primary', '#f0fdf4');
+    body.style.setProperty('--bg-secondary', '#dcfce7');
+    body.style.setProperty('--bg-card', '#bbf7d0');
+    body.style.setProperty('--bg-glass', 'rgba(240, 253, 244, 0.85)');
+    body.style.setProperty('--border-glass', '#4ade80');
+    body.style.setProperty('--border-glass-light', 'rgba(74, 222, 128, 0.2)');
+    body.style.setProperty('--accent-purple', '#4ade80');
+    body.style.setProperty('--accent-purple-hover', '#22c55e');
+    body.style.setProperty('--accent-purple-glow', 'rgba(74, 222, 128, 0.4)');
+    body.style.setProperty('--text-primary', '#1f3a2b');
+    body.style.setProperty('--text-secondary', '#355e46');
+    body.style.setProperty('--text-muted', '#5e8c72');
+  } else if (themeName === 'cyber-kawaii') {
+    body.classList.add('theme-cyber-kawaii');
+    body.style.setProperty('--bg-primary', '#faf5ff');
+    body.style.setProperty('--bg-secondary', '#f3e8ff');
+    body.style.setProperty('--bg-card', '#e9d5ff');
+    body.style.setProperty('--bg-glass', 'rgba(250, 245, 255, 0.85)');
+    body.style.setProperty('--border-glass', '#c084fc');
+    body.style.setProperty('--border-glass-light', 'rgba(192, 132, 252, 0.2)');
+    body.style.setProperty('--accent-purple', '#c084fc');
+    body.style.setProperty('--accent-purple-hover', '#a855f7');
+    body.style.setProperty('--accent-purple-glow', 'rgba(192, 132, 252, 0.4)');
+    body.style.setProperty('--accent-gold', '#38bdf8');
+    body.style.setProperty('--accent-gold-hover', '#0ea5e9');
+    body.style.setProperty('--text-primary', '#3b224c');
+    body.style.setProperty('--text-secondary', '#5e3b75');
+    body.style.setProperty('--text-muted', '#8862a1');
   } else if (themeName === 'chalkboard-math') {
     body.classList.add('theme-chalkboard');
-    body.style.setProperty('--bg-primary', '#14251c');
-    body.style.setProperty('--bg-secondary', '#1a3327');
-    body.style.setProperty('--bg-card', '#214232');
-    body.style.setProperty('--bg-glass', 'rgba(33, 66, 50, 0.8)');
-    body.style.setProperty('--border-glass', 'rgba(255, 255, 255, 0.2)');
-    body.style.setProperty('--text-primary', '#ffffff');
-    body.style.setProperty('--text-secondary', '#a3cfbb');
-    body.style.setProperty('--text-muted', '#789c89');
-    body.style.setProperty('--accent-purple', '#a3cfbb');
-    body.style.setProperty('--accent-purple-hover', '#c2e7d5');
+    body.style.setProperty('--bg-primary', '#1e352f');
+    body.style.setProperty('--bg-secondary', '#27453d');
+    body.style.setProperty('--bg-card', '#325a4f');
+    body.style.setProperty('--bg-glass', 'rgba(30, 53, 47, 0.85)');
+    body.style.setProperty('--border-glass', 'rgba(255, 255, 255, 0.25)');
     body.style.setProperty('--border-glass-light', 'rgba(255, 255, 255, 0.08)');
-  } else if (themeName === 'cyberpunk-math') {
-    body.classList.add('theme-cyberpunk');
-    body.style.setProperty('--bg-primary', '#060309');
-    body.style.setProperty('--bg-secondary', '#0e0817');
-    body.style.setProperty('--bg-card', '#160d25');
-    body.style.setProperty('--bg-glass', 'rgba(22, 13, 37, 0.7)');
-    body.style.setProperty('--border-glass', '#06b6d4');
+    body.style.setProperty('--accent-purple', '#ffb3c1');
+    body.style.setProperty('--accent-purple-hover', '#ffccd5');
+    body.style.setProperty('--accent-purple-glow', 'rgba(255, 179, 193, 0.4)');
+    body.style.setProperty('--accent-gold', '#bbf7d0');
+    body.style.setProperty('--accent-gold-hover', '#dcfce7');
     body.style.setProperty('--text-primary', '#ffffff');
-    body.style.setProperty('--text-secondary', '#a5f3fc');
-    body.style.setProperty('--text-muted', '#475569');
-    body.style.setProperty('--accent-purple', '#06b6d4');
-    body.style.setProperty('--accent-purple-hover', '#22d3ee');
-    body.style.setProperty('--accent-gold', '#d946ef');
-  } else if (themeName === 'mateflix-crimson') {
-    body.classList.add('theme-mateflix');
-    body.style.setProperty('--bg-primary', '#090909');
-    body.style.setProperty('--bg-secondary', '#121212');
-    body.style.setProperty('--bg-card', '#1c1c1c');
-    body.style.setProperty('--bg-glass', 'rgba(28, 28, 28, 0.75)');
-    body.style.setProperty('--border-glass', '#e50914');
-    body.style.setProperty('--text-primary', '#f5f5f5');
-    body.style.setProperty('--text-secondary', '#cccccc');
-    body.style.setProperty('--text-muted', '#777777');
-    body.style.setProperty('--accent-purple', '#e50914');
-    body.style.setProperty('--accent-purple-hover', '#ff1f2a');
+    body.style.setProperty('--text-secondary', '#a3cfc1');
+    body.style.setProperty('--text-muted', '#72968c');
+  } else {
+    body.classList.add('theme-mochi-pink');
   }
 }
 
 function renderActiveView() {
-  // Hide all tab views
   document.querySelectorAll('.tab-view').forEach(v => {
     v.classList.add('hidden');
     v.classList.remove('active');
   });
 
-  // Show selected active tab
   const activeView = document.getElementById('view-' + state.activeTab);
   if (activeView) {
     activeView.classList.remove('hidden');
     activeView.classList.add('active');
   }
 
-  // Update navigation items state
   document.querySelectorAll('.nav-item').forEach(btn => {
     btn.classList.remove('active');
   });
   const activeBtn = document.getElementById('nav-btn-' + state.activeTab);
   if (activeBtn) activeBtn.classList.add('active');
 
-  // Trigger sub-renderers
   if (state.activeTab === 'dashboard') {
     renderDashboardMap();
   } else if (state.activeTab === 'codex') {
     renderCodexGrid();
   }
-}
-
-function switchUniverse(universe) {
-  state.activeUniverse = universe;
-  state.activeTab = 'dashboard';
-  saveState();
-
-  if (universe === 'portal') {
-    portalScreen.classList.remove('hidden');
-    appScreen.classList.add('hidden');
-    applyTheme('dark-deep'); // Restore standard space portal theme
-  } else {
-    portalScreen.classList.add('hidden');
-    appScreen.classList.remove('hidden');
-
-    // Toggle Math Laboratory subtab visibility
-    const sandboxNav = document.getElementById('nav-btn-sandbox');
-    if (universe === 'math') {
-      sandboxNav.classList.remove('hidden');
-      document.getElementById('logo-icon').innerText = '📐';
-      document.getElementById('logo-title').innerText = 'Mateflix';
-      document.getElementById('tab-label-dashboard').innerText = 'Temporadas';
-      document.getElementById('tab-label-codex').innerText = 'Geómetras';
-      document.getElementById('codex-title').innerText = 'El Códice de Geómetras';
-      document.getElementById('codex-subtitle').innerText = 'Descubre a los geómetras y matemáticos más célebres de la historia.';
-      applyTheme('mateflix-crimson'); // Math default theme is Mateflix crimson!
-    } else {
-      sandboxNav.classList.add('hidden');
-      document.getElementById('logo-icon').innerText = '🦉';
-      document.getElementById('logo-title').innerText = 'PhiloLingo';
-      document.getElementById('tab-label-dashboard').innerText = 'Camino del Logos';
-      document.getElementById('tab-label-codex').innerText = 'Códice de Sabios';
-      document.getElementById('codex-title').innerText = 'El Códice de los Sabios';
-      document.getElementById('codex-subtitle').innerText = 'Desbloquea los grandes filósofos completando sus lecciones.';
-      applyTheme('dark-deep'); // Philosophy default theme
-    }
-  }
-
-  updateGlobalStats();
-  renderActiveView();
 }
 
 // ==========================================
@@ -709,80 +578,61 @@ function switchUniverse(universe) {
 
 function isModuleUnlocked(moduleId) {
   if (moduleId === 1) return true;
-
-  if (state.activeUniverse === 'math') {
-    const prevModule = mathLessonsData.find(m => m.id === moduleId - 1);
-    if (!prevModule) return false;
-    return prevModule.lessons.every(lesson => state.mathCompletedLessons.includes(lesson.id));
-  } else {
-    const prevModule = lessonsData.find(m => m.id === moduleId - 1);
-    if (!prevModule) return false;
-    return prevModule.lessons.every(lesson => state.completedLessons.includes(lesson.id));
-  }
+  const prevModule = mathLessonsData.find(m => m.id === moduleId - 1);
+  if (!prevModule) return false;
+  return prevModule.lessons.every(lesson => state.mathCompletedLessons.includes(lesson.id));
 }
 
 function isLessonUnlocked(lessonId, moduleId) {
   if (!isModuleUnlocked(moduleId)) return false;
-
-  const dataset = state.activeUniverse === 'math' ? mathLessonsData : lessonsData;
-  const module = dataset.find(m => m.id === moduleId);
+  const module = mathLessonsData.find(m => m.id === moduleId);
   const lessonIdx = module.lessons.findIndex(l => l.id === lessonId);
   if (lessonIdx === 0) return true;
-
   const prevLesson = module.lessons[lessonIdx - 1];
-  if (state.activeUniverse === 'math') {
-    return state.mathCompletedLessons.includes(prevLesson.id);
-  } else {
-    return state.completedLessons.includes(prevLesson.id);
-  }
+  return state.mathCompletedLessons.includes(prevLesson.id);
 }
 
 function renderDashboardMap() {
   const container = document.getElementById('path-map-container');
   container.innerHTML = '';
 
-  const universeHeader = document.createElement('div');
-  universeHeader.className = 'path-header';
-  universeHeader.innerHTML = `
-    <h1>${state.activeUniverse === 'math' ? 'El Camino Matemático' : 'El Camino del Filósofo'}</h1>
-    <p>${state.activeUniverse === 'math' ? 'Supera las temporadas del álgebra y modela el universo exacto.' : 'Domina las corrientes de pensamiento y asciende al nivel de Rey Filósofo.'}</p>
+  const header = document.createElement('div');
+  header.className = 'path-header';
+  header.innerHTML = `
+    <h1>El Camino de Mate-go 🐱🌸</h1>
+    <p>Supera las temporadas del álgebra y modela el universo exacto de forma muy dulce.</p>
   `;
-  container.appendChild(universeHeader);
+  container.appendChild(header);
 
-  const dataset = state.activeUniverse === 'math' ? mathLessonsData : lessonsData;
-
-  dataset.forEach((module) => {
+  mathLessonsData.forEach((module) => {
     const moduleUnlocked = isModuleUnlocked(module.id);
 
     const moduleHeader = document.createElement('div');
     moduleHeader.className = 'question-bubble';
     moduleHeader.style.width = '100%';
     moduleHeader.style.marginBottom = '1.5rem';
-    moduleHeader.style.background = moduleUnlocked ? 'var(--bg-glass)' : 'rgba(20, 20, 30, 0.4)';
+    moduleHeader.style.background = moduleUnlocked ? 'var(--bg-glass)' : 'rgba(255, 255, 255, 0.3)';
     moduleHeader.style.opacity = moduleUnlocked ? '1' : '0.6';
-    moduleHeader.style.borderStyle = moduleUnlocked ? 'solid' : 'dashed';
+    moduleHeader.style.border = '3px solid var(--text-primary)';
     moduleHeader.style.transform = 'none';
 
     moduleHeader.innerHTML = `
       <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
         <span style="font-size: 2rem;">${module.badge}</span>
         <div>
-          <h3 style="font-size: 1.25rem; color: ${moduleUnlocked ? 'var(--text-primary)' : 'var(--text-muted)'};">
-            ${module.subtitle}: {${module.title}}
+          <h3 style="font-size: 1.3rem; color: var(--text-primary);">
+            ${module.subtitle}: ${module.title}
           </h3>
-          <span class="node-difficulty" style="color: var(--accent-gold);">Dificultad: ${module.difficulty}</span>
+          <span class="node-difficulty" style="color: var(--accent-purple-hover); font-weight: bold;">Dificultad: ${module.difficulty}</span>
         </div>
       </div>
-      <p style="font-size: 0.9rem; color: var(--text-secondary);">${module.description}</p>
+      <p style="font-size: 0.95rem; color: var(--text-secondary);">${module.description}</p>
     `;
     container.appendChild(moduleHeader);
 
-    // List of lessons
     module.lessons.forEach((lesson, index) => {
       const unlocked = isLessonUnlocked(lesson.id, module.id);
-      const completed = state.activeUniverse === 'math'
-        ? state.mathCompletedLessons.includes(lesson.id)
-        : state.completedLessons.includes(lesson.id);
+      const completed = state.mathCompletedLessons.includes(lesson.id);
 
       let nodeClass = 'locked';
       if (completed) nodeClass = 'completed';
@@ -803,28 +653,26 @@ function renderDashboardMap() {
       const labelCard = document.createElement('div');
       labelCard.className = 'node-label-card';
       labelCard.innerHTML = `
-        <span class="node-subtitle">${state.activeUniverse === 'math' ? 'Episodio' : 'Lección'} ${index + 1}</span>
-        <div class="node-title" style="font-size: 0.85rem;">${lesson.name}</div>
+        <span class="node-subtitle">Episodio ${index + 1}</span>
+        <div class="node-title" style="font-size: 0.9rem; font-weight: bold;">${lesson.name}</div>
         <span class="node-difficulty">Recompensa: +${lesson.xpAward} XP</span>
       `;
 
       lessonNode.appendChild(nodeBtn);
       lessonNode.appendChild(labelCard);
 
-      // Connection Line
       if (index < module.lessons.length - 1) {
         const line = document.createElement('div');
-        line.className = `path-line ${completed ? 'completed' : unlocked ? 'active' : ''}`;
+        line.className = `path-line`;
         lessonNode.appendChild(line);
       }
 
       container.appendChild(lessonNode);
     });
 
-    // Connection line to next module
-    if (module.id < dataset.length) {
+    if (module.id < mathLessonsData.length) {
       const line = document.createElement('div');
-      line.className = `path-line ${isModuleUnlocked(module.id + 1) ? 'completed' : ''}`;
+      line.className = `path-line`;
       line.style.height = '60px';
       line.style.marginTop = '2rem';
       line.style.marginBottom = '2rem';
@@ -834,16 +682,14 @@ function renderDashboardMap() {
 }
 
 // ==========================================
-// 6. RENDERING CODEX CARD LIBRARY
+// 6. RENDERING CODEX
 // ==========================================
 
 function renderCodexGrid() {
   const container = document.getElementById('codex-cards-grid-container');
   container.innerHTML = '';
 
-  const dataset = state.activeUniverse === 'math' ? mathCodexData : codexData;
-
-  dataset.forEach((character) => {
+  mathCodexData.forEach((character) => {
     const unlocked = isModuleUnlocked(character.moduleRequired);
 
     const wrapper = document.createElement('div');
@@ -855,7 +701,6 @@ function renderCodexGrid() {
       triggerSound('click');
     });
 
-    // Front Side
     const front = document.createElement('div');
     front.className = `codex-card-front ${!unlocked ? 'locked' : ''}`;
     front.innerHTML = `
@@ -867,7 +712,6 @@ function renderCodexGrid() {
 
     inner.appendChild(front);
 
-    // Back Side (if unlocked)
     if (unlocked) {
       const back = document.createElement('div');
       back.className = 'codex-card-back';
@@ -878,7 +722,7 @@ function renderCodexGrid() {
         </div>
         <div class="bio-text">
           <p style="margin-bottom: 0.5rem;">${character.bio}</p>
-          <p style="font-size: 0.72rem; border-top: 1px dashed var(--border-glass); padding-top: 0.5rem; font-style: normal;">
+          <p style="font-size: 0.78rem; border-top: 2px dashed var(--text-primary); padding-top: 0.5rem; font-style: normal;">
             💡 <strong>Curiosidad:</strong> ${character.curiosity}
           </p>
         </div>
@@ -893,12 +737,12 @@ function renderCodexGrid() {
 }
 
 // ==========================================
-// 7. ACTIVE LESSON ENGINE (QUESTION POPULATOR)
+// 7. ACTIVE LESSON ENGINE
 // ==========================================
 
 function startLessonFlow(lesson) {
   if (state.userHearts <= 0) {
-    alert("❌ ¡No tienes vidas! Visita el Ágora (Tienda) para restaurar tus corazones.");
+    alert("❌ ¡No tienes corazones! Visita la Tiendita de Mochi para recargarlos.");
     state.activeTab = 'store';
     renderActiveView();
     return;
@@ -927,32 +771,20 @@ function startLessonFlow(lesson) {
 
 function populateQuestion() {
   const question = state.activeLesson.questions[state.questionIndex];
-
-  // Progress Bar
   const progressPercent = (state.questionIndex / state.activeLesson.questions.length) * 100;
   document.getElementById('lesson-progress-bar').style.width = progressPercent + '%';
   document.getElementById('lesson-hearts-badge').innerText = state.userHearts;
-
-  // Set Question Title
   document.getElementById('lesson-question-text').innerText = question.question;
 
-  // Set Mentor Mood and Quote
   const displayMentor = document.getElementById('mentor-avatar-display');
   const quoteDisplay = document.getElementById('lesson-mentor-quote');
 
-  if (state.activeUniverse === 'math') {
-    displayMentor.innerText = '📐';
-    quoteDisplay.innerText = '💬 ¡A resolver! Apliquemos las fórmulas correspondientes...';
-  } else {
-    displayMentor.innerText = '🤔';
-    quoteDisplay.innerText = '💬 Analicemos con prudencia el siguiente dilema...';
-  }
+  displayMentor.innerText = '🐱';
+  quoteDisplay.innerText = '💬 ¡Hola, nya! Resolvamos este problema juntos...';
 
-  // Populate Interactive Panel
   const interactiveContainer = document.getElementById('question-interactive-container');
   interactiveContainer.innerHTML = '';
 
-  // Reset check button states
   document.getElementById('btn-check-answer').classList.remove('hidden');
   document.getElementById('btn-check-answer').disabled = true;
   document.getElementById('btn-next-question').classList.add('hidden');
@@ -974,7 +806,6 @@ function populateQuestion() {
         triggerSound('click');
         state.selectedOption = opt;
         
-        // Remove selection highlights
         grid.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
         document.getElementById('btn-check-answer').disabled = false;
@@ -1002,9 +833,9 @@ function populateQuestion() {
     const buildDropzoneHTML = (val) => {
       if (question.text) {
         const parts = question.text.split('________');
-        return `${parts[0]}<span style="border-bottom: 2px solid var(--accent-purple); padding: 0 1rem; color: var(--accent-gold); font-weight: 700;">${val || "________"}</span>${parts[1] || ''}`;
+        return `${parts[0]}<span style="border-bottom: 3px solid var(--accent-purple); padding: 0 1rem; color: var(--accent-purple-hover); font-weight: 700;">${val || "________"}</span>${parts[1] || ''}`;
       } else {
-        return `<span style="color: var(--accent-gold); font-weight: 700;">${val || "________"}</span>`;
+        return `<span style="color: var(--accent-purple-hover); font-weight: 700;">${val || "________"}</span>`;
       }
     };
 
@@ -1037,88 +868,6 @@ function populateQuestion() {
     wrapper.appendChild(bank);
     interactiveContainer.appendChild(wrapper);
 
-  } else if (question.type === 'sentence-builder') {
-    const wrapper = document.createElement('div');
-    wrapper.style.width = '100%';
-
-    const dropzone = document.createElement('div');
-    dropzone.className = 'sentence-dropzone';
-    dropzone.style.flexDirection = 'column';
-    dropzone.style.gap = '0.5rem';
-    dropzone.style.minHeight = '120px';
-    dropzone.innerHTML = `<span style="color: var(--text-muted); font-size: 0.9rem;">Haz clic en los enunciados de abajo para ordenarlos paso a paso...</span>`;
-
-    const bank = document.createElement('div');
-    bank.className = 'words-bank';
-    bank.style.flexDirection = 'column';
-    bank.style.gap = '0.5rem';
-
-    const renderSentenceBuilder = () => {
-      // Re-populate Dropzone
-      dropzone.innerHTML = '';
-      if (state.sentenceWords.length === 0) {
-        dropzone.innerHTML = `<span style="color: var(--text-muted); font-size: 0.9rem;">Haz clic en los enunciados de abajo para ordenarlos paso a paso...</span>`;
-      } else {
-        state.sentenceWords.forEach((word, wIdx) => {
-          const tile = document.createElement('button');
-          tile.className = 'word-tile';
-          tile.style.width = '100%';
-          tile.style.textAlign = 'left';
-          tile.style.display = 'flex';
-          tile.style.gap = '0.75rem';
-          tile.innerHTML = `<span style="color: var(--accent-gold); font-weight: bold;">${wIdx + 1}.</span> <span>${word}</span>`;
-          
-          tile.addEventListener('click', () => {
-            if (state.isAnswerChecked) return;
-            triggerSound('click');
-            state.sentenceWords = state.sentenceWords.filter(w => w !== word);
-            renderSentenceBuilder();
-          });
-
-          dropzone.appendChild(tile);
-        });
-      }
-
-      // Sync bank tiles disabled/enabled
-      bank.querySelectorAll('.word-tile').forEach((btn) => {
-        const wordVal = btn.getAttribute('data-word');
-        if (state.sentenceWords.includes(wordVal)) {
-          btn.classList.add('used');
-          btn.disabled = true;
-        } else {
-          btn.classList.remove('used');
-          btn.disabled = false;
-        }
-      });
-
-      // Enable check button if all elements are in the dropzone
-      document.getElementById('btn-check-answer').disabled = (state.sentenceWords.length !== question.words.length);
-    };
-
-    question.words.forEach((word) => {
-      const tile = document.createElement('button');
-      tile.className = 'word-tile';
-      tile.style.width = '100%';
-      tile.style.textAlign = 'left';
-      tile.innerText = word;
-      tile.setAttribute('data-word', word);
-
-      tile.addEventListener('click', () => {
-        if (state.isAnswerChecked) return;
-        triggerSound('click');
-        if (!state.sentenceWords.includes(word)) {
-          state.sentenceWords.push(word);
-        }
-        renderSentenceBuilder();
-      });
-
-      bank.appendChild(tile);
-    });
-
-    wrapper.appendChild(dropzone);
-    wrapper.appendChild(bank);
-    interactiveContainer.appendChild(wrapper);
-
   } else if (question.type === 'match') {
     const wrapper = document.createElement('div');
     wrapper.className = 'match-container';
@@ -1126,11 +875,11 @@ function populateQuestion() {
     wrapper.style.gap = '1rem';
 
     const descSpan = document.createElement('span');
-    descSpan.style.fontSize = '0.85rem';
+    descSpan.style.fontSize = '0.9rem';
     descSpan.style.color = 'var(--text-muted)';
     descSpan.style.textAlign = 'center';
     descSpan.style.display = 'block';
-    descSpan.innerText = 'Selecciona un elemento de la izquierda y luego su correspondencia a la derecha.';
+    descSpan.innerText = 'Selecciona una pareja compatible de ambos lados, ¡nya! 🌸';
     wrapper.appendChild(descSpan);
 
     const colsRow = document.createElement('div');
@@ -1144,7 +893,6 @@ function populateQuestion() {
     const rightCol = document.createElement('div');
     rightCol.className = 'match-column';
 
-    // Populate Left Column
     question.pairs.forEach((pair) => {
       const btn = document.createElement('button');
       btn.className = 'match-item clickable';
@@ -1165,7 +913,6 @@ function populateQuestion() {
       leftCol.appendChild(btn);
     });
 
-    // Populate Right Column sorted alphabetically
     const sortedRights = question.pairs.map(p => p.right).sort();
     sortedRights.forEach((rightItem) => {
       const btn = document.createElement('button');
@@ -1195,7 +942,6 @@ function populateQuestion() {
           state.matchedPairs.push({ left: state.matchLeftSelected, right: state.matchRightSelected });
           triggerSound('click');
 
-          // Highlight matched items
           leftCol.querySelectorAll('.match-item').forEach(b => {
             if (b.innerText === state.matchLeftSelected) {
               b.classList.add('matched');
@@ -1209,17 +955,14 @@ function populateQuestion() {
             }
           });
         } else {
-          // Clear styles on error
           leftCol.querySelectorAll('.match-item').forEach(b => b.classList.remove('selected'));
           rightCol.querySelectorAll('.match-item').forEach(b => b.classList.remove('selected'));
           triggerSound('incorrect');
         }
 
-        // Reset selections
         state.matchLeftSelected = null;
         state.matchRightSelected = null;
 
-        // Enable check if all matched
         document.getElementById('btn-check-answer').disabled = (state.matchedPairs.length !== question.pairs.length);
       }
     };
@@ -1237,8 +980,6 @@ function processCheckAnswer() {
 
   if (question.type === 'multiple-choice' || question.type === 'true-false' || question.type === 'fill-in-the-blank') {
     correct = state.selectedOption === question.answer;
-  } else if (question.type === 'sentence-builder') {
-    correct = JSON.stringify(state.sentenceWords) === JSON.stringify(question.correctOrder);
   } else if (question.type === 'match') {
     correct = state.matchedPairs.length === question.pairs.length;
   }
@@ -1261,19 +1002,13 @@ function processCheckAnswer() {
 
   if (correct) {
     triggerSound('correct');
-    displayMentor.innerText = '🎉';
+    displayMentor.innerText = '😸';
     
-    // Set success quote
-    const quotes = state.activeUniverse === 'math' ? [
-      "¡Excelente cálculo! Exacto como un teorema de Euclides.",
-      "¡Brillante! Has operado a la perfección.",
-      "¡Resuelto con maestría!",
-      "La precisión matemática habita en tu mente."
-    ] : [
-      "¡Brillante! Has desentrañado la verdad.",
-      "¡Excelente! Muy bien razonado.",
-      "¡Aristóteles asentiría con orgullo!",
-      "La sabiduría del Logos corre por tus venas."
+    const quotes = [
+      "¡Nya! ¡Excelente cálculo! Exacto y perfecto. 🌸✨",
+      "¡Súper correcto! ¡Te has ganado un caramelo virtual! 🍭🐱",
+      "¡Increíble! ¡Eres un genio matemático! 🍡🎀",
+      "¡Eso es! Todo operado de forma maravillosa. 🧸✨"
     ];
     quoteDisplay.innerText = '💬 ' + quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -1283,34 +1018,26 @@ function processCheckAnswer() {
     document.getElementById('feedback-desc-box').innerText = question.explanation;
   } else {
     triggerSound('incorrect');
-    displayMentor.innerText = state.activeUniverse === 'math' ? '📐' : '🧐';
+    displayMentor.innerText = '😿';
 
-    // Set fail quote
-    const quotes = state.activeUniverse === 'math' ? [
-      "Casi... un error de signo puede cambiarlo todo. ¡Prueba otra vez!",
-      "Incorrecto. Pero de los errores matemáticos nace el análisis riguroso.",
-      "Ten cuidado con el despeje o la ley de signos.",
-      "Revisa bien el procedimiento algebraico."
-    ] : [
-      "Casi... recuerda que la duda es el principio del saber.",
-      "Sócrates nos diría: 'Solo sé que no sé nada'. ¡Prueba de nuevo!",
-      "Incorrecto. Pero el error es un gran catalizador de la verdad.",
-      "Tu alma aún necesita recordar esta Idea platónica."
+    const quotes = [
+      "¡Uyuuy! Casi lo tienes... ¡revisa el signo, nya! 🧸🎀",
+      "¡Oh noes! Recuerda la ley de signos... ¡tú puedes! 😿🍭",
+      "No te preocupes, ¡vamos a intentarlo de nuevo! 🌸✨",
+      "¡Uy! Un error de cálculo, ¡pero sigamos practicando, nya! 🍡"
     ];
     quoteDisplay.innerText = '💬 ' + quotes[Math.floor(Math.random() * quotes.length)];
 
     footerFeedback.className = 'lesson-footer incorrect';
     document.getElementById('feedback-icon-box').innerText = '❌';
-    document.getElementById('feedback-title-box').innerText = 'Oh, no es del todo correcto';
+    document.getElementById('feedback-title-box').innerText = '¡Uy, casi casi!';
     document.getElementById('feedback-desc-box').innerText = question.explanation;
 
-    // Deduct hearts
     state.userHearts = Math.max(0, state.userHearts - 1);
     state.wrongAnswersCount++;
     saveState();
     updateGlobalStats();
 
-    // Shake question card
     const card = document.getElementById('lesson-question-zone');
     card.classList.add('shake-card');
     setTimeout(() => card.classList.remove('shake-card'), 450);
@@ -1320,7 +1047,7 @@ function processCheckAnswer() {
 function processNextQuestion() {
   if (state.userHearts <= 0) {
     triggerSound('incorrect');
-    alert("💔 ¡Has perdido todas tus vidas! Regresa al Ágora (Tienda) para recargarlas.");
+    alert("💔 ¡Has perdido todos tus corazones! Regresa a la Tiendita de Mochi para recargarlos.");
     lessonOverlay.classList.add('hidden');
     state.activeTab = 'store';
     renderActiveView();
@@ -1340,75 +1067,62 @@ function processNextQuestion() {
 
     populateQuestion();
   } else {
-    // Lesson Finished arpeggio arpa!
     triggerSound('victory');
     state.lessonFinished = true;
 
-    // Award Rewards
     const xpEarned = state.activeLesson.xpAward;
     const gemsEarned = Math.max(5, Math.floor(state.activeLesson.xpAward / 2) - state.wrongAnswersCount);
 
     state.userXP += xpEarned;
     state.userGems += gemsEarned;
 
-    // Add to completed list
-    if (state.activeUniverse === 'math') {
-      if (!state.mathCompletedLessons.includes(state.activeLesson.id)) {
-        state.mathCompletedLessons.push(state.activeLesson.id);
-      }
-    } else {
-      if (!state.completedLessons.includes(state.activeLesson.id)) {
-        state.completedLessons.push(state.activeLesson.id);
-      }
+    if (!state.mathCompletedLessons.includes(state.activeLesson.id)) {
+      state.mathCompletedLessons.push(state.activeLesson.id);
     }
 
     saveState();
     updateGlobalStats();
 
-    // Load congrats panel
     document.getElementById('lesson-question-zone').classList.add('hidden');
     document.getElementById('lesson-completion-zone').classList.remove('hidden');
     document.getElementById('lesson-progress-bar').style.width = '100%';
 
-    document.getElementById('completion-emoji-display').innerText = state.activeUniverse === 'math' ? '📐📈' : '🦉🎓';
-    document.getElementById('completion-message-display').innerText = state.activeUniverse === 'math'
-      ? 'Tu mente se agudiza y domina la exactitud de las fórmulas.'
-      : 'El Logos se fortalece con tu templanza. ¡Gran lección de sabiduría!';
+    document.getElementById('completion-emoji-display').innerText = '🐱✨';
+    document.getElementById('completion-message-display').innerText = '¡Nya! Has resuelto la lección de maravilla. ¡Caramelos para ti! 🍭🍡';
     
     document.getElementById('completion-xp-award').innerText = '+' + xpEarned;
-    document.getElementById('completion-gems-award').innerText = '+' + gemsEarned + ' 💎';
+    document.getElementById('completion-gems-award').innerText = '+' + gemsEarned + ' 🍭';
 
-    // Hide footer check buttons
     document.getElementById('btn-next-question').classList.add('hidden');
     document.getElementById('feedback-slide-box').classList.add('hidden');
   }
 }
 
 // ==========================================
-// 8. STORE LOGICAL TRANSACTIONS
+// 8. TIENDITA TRANSACTIONS
 // ==========================================
 
 function handleBuyHearts() {
   triggerSound('click');
   if (state.userGems < 50) {
-    alert("❌ No tienes suficientes Gemas de Sabiduría.");
+    alert("❌ No tienes suficientes Caramelos.");
     return;
   }
   if (state.userHearts >= 5) {
-    alert("❤️ ¡Tus vidas ya están al máximo!");
+    alert("💖 ¡Tus vidas ya están al máximo!");
     return;
   }
   state.userGems -= 50;
   state.userHearts = 5;
   saveState();
   updateGlobalStats();
-  alert("❤️ ¡Has recargado tus vidas al máximo (5 corazones)!");
+  alert("💖 ¡Has recargado tus vidas al máximo (5 corazones)!");
 }
 
 function handleBuyShield() {
   triggerSound('click');
   if (state.userGems < 75) {
-    alert("❌ No tienes suficientes Gemas de Sabiduría.");
+    alert("❌ No tienes suficientes Caramelos.");
     return;
   }
   if (state.hasStreakShield) {
@@ -1422,11 +1136,20 @@ function handleBuyShield() {
   alert("🛡️ ¡Escudo de Racha activado! Tu racha estará protegida contra olvidos de 1 día.");
 }
 
+function buyTheme(themeName) {
+  triggerSound('click');
+  if (state.currentTheme === themeName) {
+    alert("🎨 ¡Ya tienes este tema activado!");
+    return;
+  }
+  applyTheme(themeName);
+  alert(`🎨 ¡Tema activado con éxito, nya!`);
+}
+
 // ==========================================
-// 9. FORMULAS SANDBOX SOLVERS (MATH TAB)
+// 9. FORMULAS SANDBOX (LABORATORIO KAWAII)
 // ==========================================
 
-// Statistics logic
 function runStatsCalculator() {
   try {
     const rawVal = document.getElementById('stats-input').value;
@@ -1440,11 +1163,9 @@ function runStatsCalculator() {
       return;
     }
 
-    // Sum & Mean
     const sum = nums.reduce((a, b) => a + b, 0);
     const mean = sum / nums.length;
 
-    // Median
     const sorted = [...nums].sort((a, b) => a - b);
     let median;
     const mid = Math.floor(sorted.length / 2);
@@ -1454,7 +1175,6 @@ function runStatsCalculator() {
       median = sorted[mid];
     }
 
-    // Mode
     const counts = {};
     let maxCount = 0;
     let modes = [];
@@ -1478,29 +1198,29 @@ function runStatsCalculator() {
 
     box.innerHTML = `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
-        <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-glass-light);">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Media</span>
-          <div style="font-size: 2rem; font-weight: 800; color: var(--accent-purple-hover); margin-top: 0.5rem;">${mean.toFixed(2)}</div>
+        <div style="background: var(--bg-glass); padding: 1.25rem; border-radius: 1.5rem; text-align: center; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+          <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Media</span>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent-purple-hover); margin-top: 0.5rem;">${mean.toFixed(2)}</div>
         </div>
-        <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-glass-light);">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Mediana</span>
-          <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold); margin-top: 0.5rem;">${median.toFixed(2)}</div>
+        <div style="background: var(--bg-glass); padding: 1.25rem; border-radius: 1.5rem; text-align: center; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+          <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Mediana</span>
+          <div style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary); margin-top: 0.5rem;">${median.toFixed(2)}</div>
         </div>
-        <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-glass-light);">
-          <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Moda</span>
-          <div style="font-size: 1.4rem; font-weight: 800; color: var(--color-correct); margin-top: 0.75rem;">
-            ${modes.length > 0 ? modes.join(', ') : 'No hay moda'}
+        <div style="background: var(--bg-glass); padding: 1.25rem; border-radius: 1.5rem; text-align: center; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+          <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase; font-weight: bold;">Moda</span>
+          <div style="font-size: 1.6rem; font-weight: 800; color: var(--color-correct); margin-top: 0.75rem;">
+            ${modes.length > 0 ? modes.join(', ') : 'No hay moda, nya 🌸'}
           </div>
         </div>
       </div>
 
-      <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-glass-light);">
-        <h3 style="font-size: 1.15rem; color: var(--accent-gold); margin-bottom: 0.75rem;">Procedimiento Paso a Paso:</h3>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary);">
+      <div style="background: rgba(255, 255, 255, 0.4); padding: 1.5rem; border-radius: 1.5rem; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+        <h3 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 0.75rem;">✨ Procedimiento Paso a Paso:</h3>
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text-primary);">
           <strong>1. Promedio (Media):</strong> Suma total de ${nums.length} datos = ${sum.toFixed(1)}. <br/>
           Dividimos: ${sum.toFixed(1)} / ${nums.length} = ${mean.toFixed(2)}
         </p>
-        <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); margin-top: 0.75rem;">
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text-primary); margin-top: 0.75rem;">
           <strong>2. Mediana (Centro):</strong> <br/>
           ${medianText}
         </p>
@@ -1509,7 +1229,6 @@ function runStatsCalculator() {
   } catch (e) { alert('Verifica el formato del listado.'); }
 }
 
-// Quadratic equation logic + SVG dynamic curve plotter
 function runQuadraticCalculator() {
   const a = parseFloat(document.getElementById('quad-a').value);
   const b = parseFloat(document.getElementById('quad-b').value);
@@ -1546,12 +1265,11 @@ function runQuadraticCalculator() {
   const vertexX = -b / (2 * a);
   const vertexY = a * vertexX * vertexX + b * vertexX + c;
 
-  // Plotting points
   const points = [];
   const scaleX = 25;
   const scaleY = 15;
-  const centerX = 150;
-  const centerY = 100;
+  const centerX = 125;
+  const centerY = 90;
 
   for (let xVal = vertexX - 4; xVal <= vertexX + 4; xVal += 0.25) {
     const yVal = a * xVal * xVal + b * xVal + c;
@@ -1567,45 +1285,49 @@ function runQuadraticCalculator() {
     <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
       <!-- Graphic SVG Curve -->
       <div style="flex: 1 1 250px; display: flex; flex-direction: column; align-items: center;">
-        <h3 style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.75rem;">Curva de la Parábola</h3>
-        <div style="background: #0e0b16; padding: 1rem; border-radius: 1.25rem; border: 2px solid var(--border-glass); box-shadow: var(--shadow-glow-purple);">
+        <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: bold;">Curva de la Parábola</h3>
+        <div style="background: #fffcf2; padding: 1rem; border-radius: 2rem; border: 3px solid var(--text-primary); box-shadow: 4px 4px 0 var(--text-primary);">
           <svg width="250" height="180" style="overflow: visible;">
             <defs>
-              <pattern id="chalk-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(139, 92, 246, 0.07)" stroke-width="1" />
+              <pattern id="kawaii-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 133, 161, 0.08)" stroke-width="1" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#chalk-grid)" />
-            <line x1="0" y1="90" x2="250" y2="90" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
-            <line x1="125" y1="0" x2="125" y2="180" stroke="rgba(255,255,255,0.15)" stroke-width="2" />
-            <polyline fill="none" stroke="var(--color-incorrect)" stroke-width="3" points="${points.join(' ')}" stroke-linecap="round" />
-            <circle cx="125" cy="90" r="5" fill="var(--accent-gold)" />
-            <text x="135" y="85" fill="var(--accent-gold)" font-size="9" font-weight="bold">Vértice</text>
+            <rect width="100%" height="100%" fill="url(#kawaii-grid)" />
+            <line x1="0" y1="90" x2="250" y2="90" stroke="rgba(77, 53, 79, 0.2)" stroke-width="2" />
+            <line x1="125" y1="0" x2="125" y2="180" stroke="rgba(77, 53, 79, 0.2)" stroke-width="2" />
+            <polyline fill="none" stroke="var(--accent-purple)" stroke-width="4" points="${points.join(' ')}" stroke-linecap="round" />
+            
+            <!-- Vertex Star ⭐ -->
+            <g transform="translate(125, 90)">
+              <polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2" fill="var(--accent-gold)" stroke="var(--text-primary)" stroke-width="1.5" />
+            </g>
+            <text x="135" y="85" fill="var(--text-primary)" font-size="10" font-family="Fredoka" font-weight="bold">Vértice ⭐</text>
           </svg>
         </div>
-        <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Ejes relativos al vértice de la función</span>
+        <span style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Graficadora de nubes relativas</span>
       </div>
 
       <!-- Descriptive Results -->
       <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 1rem;">
-        <div style="background: var(--bg-card); padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border-glass-light);">
-          <span style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Tipo de Discriminante</span>
-          <div style="font-weight: bold; color: var(--accent-gold);">${type}</div>
+        <div style="background: var(--bg-glass); padding: 1rem; border-radius: 1.25rem; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+          <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Tipo de Raíces</span>
+          <div style="font-weight: bold; color: var(--accent-purple-hover); font-size: 1.1rem;">${type}</div>
         </div>
 
         <div style="display: flex; gap: 1rem;">
-          <div style="flex: 1; background: var(--bg-card); padding: 1rem; border-radius: 0.75rem; text-align: center; border: 1px solid var(--border-glass-light);">
-            <span style="font-size: 0.75rem; color: var(--text-secondary);">Raíz x₁</span>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-correct);">${typeof root1 === 'number' ? root1.toFixed(2) : root1}</div>
+          <div style="flex: 1; background: var(--bg-glass); padding: 1rem; border-radius: 1.25rem; text-align: center; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Raíz x₁</span>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--color-correct);">${typeof root1 === 'number' ? root1.toFixed(2) : root1}</div>
           </div>
-          <div style="flex: 1; background: var(--bg-card); padding: 1rem; border-radius: 0.75rem; text-align: center; border: 1px solid var(--border-glass-light);">
-            <span style="font-size: 0.75rem; color: var(--text-secondary);">Raíz x₂</span>
-            <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-correct);">${typeof root2 === 'number' ? root2.toFixed(2) : root2}</div>
+          <div style="flex: 1; background: var(--bg-glass); padding: 1rem; border-radius: 1.25rem; text-align: center; border: 3px solid var(--text-primary); box-shadow: 3px 3px 0 var(--text-primary);">
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Raíz x₂</span>
+            <div style="font-size: 1.6rem; font-weight: 800; color: var(--color-correct);">${typeof root2 === 'number' ? root2.toFixed(2) : root2}</div>
           </div>
         </div>
 
-        <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 0.75rem; border: 1px solid var(--border-glass-light); font-size: 0.85rem;">
-          <strong>Desglose algebraico:</strong> <br/>
+        <div style="background: rgba(255, 255, 255, 0.4); padding: 1rem; border-radius: 1.25rem; border: 3px solid var(--text-primary); font-size: 0.9rem; box-shadow: 3px 3px 0 var(--text-primary);">
+          <strong>Desglose de Neko-math:</strong> <br/>
           Discriminante (Δ) = b² - 4ac = (${b})² - 4(${a})(${c}) = ${disc} <br/>
           Vértice de la parábola V = (${vertexX.toFixed(2)}, ${vertexY.toFixed(2)})
         </div>
@@ -1614,7 +1336,6 @@ function runQuadraticCalculator() {
   `;
 }
 
-// Cramer 2x2 linear system solver
 function runCramerCalculator() {
   const a1 = parseFloat(document.getElementById('cramer-a1').value);
   const b1 = parseFloat(document.getElementById('cramer-b1').value);
@@ -1637,9 +1358,9 @@ function runCramerCalculator() {
 
   if (D === 0) {
     box.innerHTML = `
-      <div style="background: rgba(244,63,94,0.1); border: 1px solid var(--color-incorrect); padding: 1.5rem; border-radius: 1rem; color: var(--color-incorrect); text-align: center;">
+      <div style="background: rgba(248,113,113,0.1); border: 3px solid var(--color-incorrect); padding: 1.5rem; border-radius: 1.5rem; color: var(--text-primary); text-align: center; box-shadow: 3px 3px 0 var(--text-primary);">
         <strong>Determinante del sistema (D) = 0.</strong> <br/>
-        ${Dx === 0 && Dy === 0 ? 'El sistema tiene infinitas soluciones (rectas coincidentes).' : 'El sistema no tiene solución (rectas paralelas).'}
+        ${Dx === 0 && Dy === 0 ? 'El sistema tiene infinitas soluciones, nya.' : 'El sistema no tiene solución.'}
       </div>
     `;
     return;
@@ -1650,18 +1371,18 @@ function runCramerCalculator() {
 
   box.innerHTML = `
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
-      <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-glass-light);">
-        <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Solución x</span>
-        <div style="font-size: 2rem; font-weight: 800; color: var(--color-correct);">${x.toFixed(2)}</div>
+      <div style="background: var(--bg-glass); padding: 1.25rem; border-radius: 1.5rem; border: 3px solid var(--text-primary); text-align: center; box-shadow: 3px 3px 0 var(--text-primary);">
+        <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase;">Solución x</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-correct);">${x.toFixed(2)}</div>
       </div>
-      <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 1rem; text-align: center; border: 1px solid var(--border-glass-light);">
-        <span style="font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase;">Solución y</span>
-        <div style="font-size: 2rem; font-weight: 800; color: var(--color-correct);">${y.toFixed(2)}</div>
+      <div style="background: var(--bg-glass); padding: 1.25rem; border-radius: 1.5rem; border: 3px solid var(--text-primary); text-align: center; box-shadow: 3px 3px 0 var(--text-primary);">
+        <span style="font-size: 0.85rem; color: var(--text-secondary); text-transform: uppercase;">Solución y</span>
+        <div style="font-size: 2.2rem; font-weight: 800; color: var(--color-correct);">${y.toFixed(2)}</div>
       </div>
     </div>
 
-    <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border-glass-light); font-size: 0.95rem; line-height: 1.6;">
-      <h3 style="font-size: 1.15rem; color: var(--accent-gold); margin-bottom: 1rem;">Resolución por Determinantes:</h3>
+    <div style="background: rgba(255, 255, 255, 0.4); padding: 1.5rem; border-radius: 2rem; border: 3px solid var(--text-primary); font-size: 0.95rem; line-height: 1.6; box-shadow: 4px 4px 0 var(--text-primary);">
+      <h3 style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 1rem;">Resolución por Cramer 🧸:</h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; font-family: monospace; color: var(--text-secondary);">
         <div>
           <strong>D general:</strong> <br/>
@@ -1682,7 +1403,7 @@ function runCramerCalculator() {
           Dy = (${a1}*${c2}) - (${c1}*${a2}) = ${Dy}
         </div>
       </div>
-      <div style="margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 0.5rem;">
+      <div style="margin-top: 1rem; border-top: 2px dashed var(--text-primary); padding-top: 0.5rem;">
         x = Dx / D = ${Dx} / ${D} = ${x.toFixed(2)} <br/>
         y = Dy / D = ${Dy} / ${D} = ${y.toFixed(2)}
       </div>
@@ -1691,26 +1412,10 @@ function runCramerCalculator() {
 }
 
 // ==========================================
-// 10. SETUP EVENTS AND EVENT LISTENERS
+// 10. SETUP EVENTS
 // ==========================================
 
 function setupEventListeners() {
-  // Enter Philosophy Universe
-  document.getElementById('btn-enter-philo').addEventListener('click', () => {
-    switchUniverse('philosophy');
-  });
-
-  // Enter Math Universe
-  document.getElementById('btn-enter-math').addEventListener('click', () => {
-    switchUniverse('math');
-  });
-
-  // Sidebar back to portal button
-  document.getElementById('nav-btn-universe').addEventListener('click', () => {
-    switchUniverse('portal');
-  });
-
-  // Primary Nav bar selectors
   document.getElementById('nav-btn-dashboard').addEventListener('click', () => {
     triggerSound('click');
     state.activeTab = 'dashboard';
@@ -1735,7 +1440,6 @@ function setupEventListeners() {
     renderActiveView();
   });
 
-  // Ambient music toggle
   const musicCheck = document.getElementById('music-checkbox');
   musicCheck.addEventListener('change', (e) => {
     triggerSound('click');
@@ -1747,11 +1451,9 @@ function setupEventListeners() {
     }
   });
 
-  // Store click triggers
   document.getElementById('store-buy-hearts').addEventListener('click', handleBuyHearts);
   document.getElementById('store-buy-shield').addEventListener('click', handleBuyShield);
 
-  // Store Theme activation buttons
   document.querySelectorAll('.btn-theme-trigger').forEach((btn) => {
     btn.addEventListener('click', () => {
       const targetTheme = btn.getAttribute('data-theme');
@@ -1759,23 +1461,19 @@ function setupEventListeners() {
     });
   });
 
-  // Lesson actions: Check and Continue
   document.getElementById('btn-check-answer').addEventListener('click', processCheckAnswer);
   document.getElementById('btn-next-question').addEventListener('click', processNextQuestion);
 
-  // Lesson close overlay button
   document.getElementById('lesson-close-btn').addEventListener('click', () => {
     triggerSound('click');
     lessonOverlay.classList.add('hidden');
   });
 
-  // Congrats close button
   document.getElementById('btn-conclude-lesson').addEventListener('click', () => {
     triggerSound('click');
     lessonOverlay.classList.add('hidden');
   });
 
-  // Sandbox subtabs selections
   document.getElementById('subtab-btn-stats').addEventListener('click', () => {
     toggleSandboxSubtab('stats');
   });
@@ -1786,7 +1484,6 @@ function setupEventListeners() {
     toggleSandboxSubtab('cramer');
   });
 
-  // Sandbox calculations triggers
   document.getElementById('stats-calc-btn').addEventListener('click', runStatsCalculator);
   document.getElementById('quad-calc-btn').addEventListener('click', runQuadraticCalculator);
   document.getElementById('cramer-calc-btn').addEventListener('click', runCramerCalculator);
@@ -1807,11 +1504,9 @@ function toggleSandboxSubtab(subtab) {
 
 function initApp() {
   applyTheme(state.currentTheme);
-  switchUniverse(state.activeUniverse);
   setupEventListeners();
   updateGlobalStats();
   renderActiveView();
 }
 
-// Start application when DOM is fully loaded
 window.addEventListener('DOMContentLoaded', initApp);
